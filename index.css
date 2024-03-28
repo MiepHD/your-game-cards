@@ -1,0 +1,79 @@
+body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  border-color: black;
+  border-width: 1px;
+  width: 200px;
+  height: 300px;
+  border-style: solid;
+  margin: 5px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: lightgray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: x-small;
+  -webkit-print-color-adjust: exact !important;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+table {
+  border-collapse: collapse;
+  margin: 1ch auto;
+}
+table,
+td,
+th {
+  border: 1px solid;
+  padding: 3px;
+}
+.rating {
+  position: relative;
+  bottom: 0.3em;
+  font-size: medium;
+  float: right;
+}
+.story,
+.players {
+  font-size: large;
+}
+.players {
+  float: right;
+  position: relative;
+  bottom: 0.5em;
+}
+.container {
+  height: 2em;
+}
+.time {
+  font-size: small;
+}
+.bar {
+  height: 1.2em;
+  background-color: grey;
+  position: relative;
+}
+.progress {
+  top: -1px;
+  left: -1px;
+  position: absolute;
+  height: 100%;
+  background-color: greenyellow;
+}
+.bar,
+.progress {
+  border-radius: 5px;
+  border: 1px solid;
+  width: 100%;
+}
+.count {
+  position: relative;
+  z-index: 1;
+  padding-left: 2.5px;
+}
