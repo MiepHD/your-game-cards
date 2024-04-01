@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 15px;
 }
 .card {
   border-color: black;
@@ -75,5 +76,5 @@ th {
 .count {
   position: relative;
   z-index: 1;
-  padding-left: 2.5px;
+  padding: 0 2.5px;
 }

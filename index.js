@@ -18,9 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="flex: 1"></div>
           <p>${card.description}</p>
           <div class="container">
-            <span class="story" style="visibility: ${
-              Object.hasOwn(card, 'story') ? 'visible' : 'hidden'
-            }">🕮 ${card.story ? '✓' : 'X'}</span>
+            <span class="story"${
+              Object.hasOwn(card, 'story') ? '' : ' style="display: none"'
+            }>🕮 ${card.story ? '✓' : 'X'}</span>
             <span class="players">${'𐀪'.repeat(
               card.players - card.minplayers
             )}${'<span style="color: blue">𐀪</span>'.repeat(

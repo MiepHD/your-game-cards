@@ -155,7 +155,7 @@ data = [
     },
   },
   {
-    background: '',
+    background: 'wallpaper_engine.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg?t=1710598764',
     description:
@@ -168,6 +168,163 @@ data = [
     achievements: {
       progress: 12,
       total: 17,
+    },
+  },
+  {
+    background: 'generic/emerald.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/292910/header.jpg?t=1709630143',
+    description:
+      '<b>Deponia: The Complete Journey</b> ist ein klassisches Point-and-Click Adventure und handelt von Rufus, welcher auf einem Planeten aus Müll lebt. Sein Ziel ist es diesen Planeten zu verlassen, das er immer wieder versucht zu erreichen.',
+    story: true,
+    minplayers: 1,
+    published: '2.6.2014',
+    lastPlayed: '25.8.2021',
+    rating: 5,
+    time: '38h 15min',
+  },
+  {
+    background: 'generic/diamond.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/214490/header.jpg?t=1710915583',
+    description:
+      'In <b>Alien: Isolation</b> ist man auf einem verlassenen Raumschiff und versucht die Gefahren dort zu umgehen, um zu überleben.',
+    story: true,
+    minplayers: 1,
+    published: '6.10.2014',
+    lastPlayed: '25.8.2022',
+    rating: 4,
+    time: '41h 49min',
+  },
+  {
+    background: 'the_witcher_1.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/20900/header.jpg?t=1709033573',
+    description:
+      'In <b>The Witcher</b> spielt man als Geralt von Riva. Er ist ein Hexer im Mittelalter, welcher in Konflikt mit einer geheimnisvollen Organisation kommt.',
+    story: true,
+    minplayers: 1,
+    published: '25.10.2007',
+    lastPlayed: '17.9.2022',
+    rating: 4,
+    time: '52h 24min',
+  },
+  {
+    background: 'generic/default.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1222700/header.jpg?t=1707868347',
+    description:
+      'In <b>A Way Out</b> spielt man zwei Verbrecher, die gemeinsam aus einem Gefängnis ausbrechen und ein freies Leben führen wollen...',
+    story: true,
+    minplayers: 2,
+    published: '22.3.2018',
+    multiplayer: 'Lokal, Online',
+    rating: 5,
+    time: '6h',
+    achievements: {
+      progress: 0,
+      total: 14,
+    },
+  },
+  {
+    background: 'generic/default.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/437160/header.jpg?t=1711459414',
+    description:
+      "In <b>A Lion's Song</b> spielt man in vier Kapiteln jeweils eine andere Person, die auf der Suche nach Ideen und Verbindungen ist. Diese begleitet man bei der Entstehung ihrer Werke.",
+    story: true,
+    minplayers: 1,
+    published: '7.7.2016',
+    rating: 5,
+    time: '8h 12min',
+  },
+  {
+    background: 'among_us.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg?t=1711619017',
+    description:
+      'In <b>Among Us</b> ist man mit seiner Crew im Weltall unterwegs, aber pass auf es gibt einen oder mehrere Verräter unter euch.',
+    minplayers: 4,
+    players: 15,
+    published: '31.12.2021',
+    lastPlayed: '7.1.2023',
+    multiplayer: 'Online, LAN',
+    rating: 4,
+    time: '37h 38min',
+  },
+  {
+    background: 'the_spectrum_retreat.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/763250/header.jpg?t=1710781709',
+    description:
+      '<b>The Spectrum Retreat</b> ist ein Puzzlespiel dessen Level mit der Transportierung von Farben zwischen Blöcken gelöst werden können.',
+    story: true,
+    minplayers: 1,
+    published: '10.7.2018',
+    lastPlayed: '25.8.2022',
+    rating: 5,
+    time: '7h 18min',
+  },
+  {
+    background: 'obduction.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/306760/header.jpg?t=1709328758',
+    description:
+      '<b>Obduction</b> ist ein Puzzlespiel, das in einer Realität spielt in der Spheren aus verschiedenen Welten durch Technologie miteinander kombiniert werden.',
+    story: true,
+    minplayers: 1,
+    published: '24.8.2016',
+    lastPlayed: '25.8.2021',
+    rating: 5,
+    time: '21h 29min',
+  },
+  {
+    background: 'generic/ruby.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/752590/header.jpg?t=1711445014',
+    description:
+      'In <b>A Plague Tale: Innocence</b> spielt man Amicia mit ihrem kleinen Bruder, Hugo, welche vor der Inquisition fliehen müssen während das Land in Krankheit versinkt.',
+    story: true,
+    minplayers: 1,
+    published: '14.5.2019',
+    lastPlayed: '25.8.2021',
+    rating: 5,
+    time: '17h 49min',
+  },
+  {
+    background: 'generic/emerald_silver.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/327220/header.jpg?t=1710865603',
+    description:
+      "In <b>Anna's Quest</b> spielt man ein Mädchen mit besonderen Fähigkeiten, die sich immer Rätsel stellen muss.",
+    story: true,
+    minplayers: 1,
+    published: '2.7.2015',
+    lastPlayed: '20.5.2023',
+    rating: 4,
+    time: '21h 32min',
+    achievements: {
+      progress: 31,
+      total: 39,
+    },
+  },
+  {
+    background: 'generic/2x-obsidian_silver.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/289950/header.jpg?t=1709547869',
+    description:
+      'Im <b>Construction Simulator 2015</b> baut man mit verschiedensten Baufahrzeugen Häuser.',
+    story: true,
+    players: 4,
+    minplayers: 1,
+    published: '18.11.2014',
+    lastPlayed: '2.3.2024',
+    multiplayer: 'Online',
+    rating: 5,
+    time: '177h 24min',
+    achievements: {
+      progress: 37,
+      total: 51,
     },
   },
 ];
