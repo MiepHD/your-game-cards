@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <img
             src="${card.image}"
           />
-          <div style="flex: 1"></div>
+          <div class="space"></div>
           <p>${card.description}</p>
           <div class="container">
             <span class="story"${
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
               <th>${card.series}</th>
             </tr>
           </table>
-          <div style="flex: 1"></div>
+          <div class="space"></div>
           <div style="height: 1.5em">
             <span class="time" style="visibility: ${
               card.time ? 'visible' : 'hidden'
@@ -81,4 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
       `);
     elem.appendTo($('body'));
   }
+  i = 0;
+  for (elem of document.querySelectorAll('.space')) {
+    if (elem.clientHeight == 0) i++;
+  }
+  if (i > 0)
+    $(`<p style="color:red"">${i} space elements are too small!</p>`).appendTo(
+      $('body')
+    );
+  if (i > 0) console.log(`${i} space elements are too small!`);
 });
