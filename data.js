@@ -2,7 +2,7 @@ data = [
   {
     background: 'wilmot.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/839870/header.jpg?t=1708399934',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/839870/header.jpg',
     description:
       "Bei <b>Wilmot's Warehouse</b> spielt man in einem Warenhaus. Man bekommt jeden Tag Gegenstände geliefert und muss diese ordnen, damit man sie wiederfindet, wenn man sie Käufern ausgeben muss. Und das unter Zeitdruck.",
     story: true,
@@ -17,9 +17,10 @@ data = [
   {
     background: 'fnaf6.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/738060/header.jpg?t=1709080873',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/738060/header.jpg',
     description:
       "In <b>Freddy Fazbear's Pizzeria Simulator</b> verwaltet man tagsüber seine Pizzeria und kümmert sich nachts um die Animatronics, die man besitzt...",
+    series: "Five Nights at Freddy's",
     minplayers: 1,
     published: '4.12.2017',
     lastPlayed: '23.3.2021',
@@ -28,8 +29,7 @@ data = [
   },
   {
     background: 'generic/default.jpg',
-    image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/32340/header.jpg?t=1711473830',
+    image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/32340/header.jpg',
     description:
       'In <b>Loom</b> lernt man Zaubersprüche in Form von Notenabfolgen. Diese muss man sich einprägen, damit man sie später aus dem Gedächtnis abspielen kann, um sie anzuwenden.',
     story: true,
@@ -42,9 +42,10 @@ data = [
   {
     background: 'generic/emerald.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/289070/header.jpg?t=1710148141',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/289070/header.jpg',
     description:
       "Bei <b>Sid Meier's Civilization VI</b> baut man eine Zivilisation auf, erobert die Welt, kämpft gegen andere und schließt Abkommen mit anderen Zivilisationen.",
+    series: "Sid Meier's Civilization",
     players: 12,
     minplayers: 1,
     published: '20.10.2016',
@@ -55,7 +56,7 @@ data = [
   {
     background: 'absolute_drift.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/320140/header.jpg?t=1709550185',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/320140/header.jpg',
     description:
       "In <b>Absolute Drift</b> fährt man durch die Welt und muss sich verschiedensten Aufgaben stellen, die durch's Driften gelöst werden können. ",
     story: true,
@@ -72,7 +73,7 @@ data = [
   {
     background: 'summerland.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/1444110/header.jpg?t=1709080435',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1444110/header.jpg',
     description:
       'Bei <b>Summerland</b> geht es um einen Polizisten, der nach seinem Tod nochmal auf seine Taten zurückblickt. Dabei wird klar, dass er in seinem Beruf moralisch fragwürdige Entscheidungen getroffen hat...',
     story: true,
@@ -89,7 +90,7 @@ data = [
   {
     background: 'human_fall_flat.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg?t=1710436632',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/477160/header.jpg',
     description:
       'In <b>Human: Fall Flat</b> läuft man durch eine Welt und löst Rätsel mit seinen zwei Händen, die man direkt ansteuern kann. Durch das Schieben, Ziehen und Drücken von Sachen kann man alle Rätsel lösen.',
     story: true,
@@ -108,7 +109,7 @@ data = [
   {
     background: 'carcassonne.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/598810/header.jpg?t=1711107003',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/598810/header.jpg',
     description:
       '<b>Carcassonne</b> das Brettspiel am PC. Man muss versuchen die gegebenen Teile möglichst so zu platzieren, dass man möglichst viel Land in Besitz nimmt.',
     players: 6,
@@ -122,7 +123,7 @@ data = [
   {
     background: 'generic/ruby.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg?t=1711529528',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1426210/header.jpg',
     description:
       'In <b>It Takes Two</b> erlebt man zusammen mit einem Freund die Geschichte von zwei Eltern, die sich trennen wollen. Durch diese Reise sollen sie wieder zusammenfinden...',
     story: true,
@@ -140,7 +141,7 @@ data = [
   {
     background: 'generic/gold.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/1410870/header.jpg?t=1709308099',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1410870/header.jpg',
     description:
       '<b>Trikaya</b> ist ein Rätselspiel, das in einem alten Tempel in der Wüste spielt. Die Rätsel werden mit den Elementen Wind, Erde und Feuer gelöst',
     story: true,
@@ -157,7 +158,7 @@ data = [
   {
     background: 'wallpaper_engine.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg?t=1710598764',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/431960/header.jpg',
     description:
       'Mit <b>Wallpaper Engine</b> kann man Hintergrundbilder erstellen und herunterladen.',
     minplayers: 0,
@@ -173,9 +174,10 @@ data = [
   {
     background: 'generic/emerald.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/292910/header.jpg?t=1709630143',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/292910/header.jpg',
     description:
       '<b>Deponia: The Complete Journey</b> ist ein klassisches Point-and-Click Adventure und handelt von Rufus, welcher auf einem Planeten aus Müll lebt. Sein Ziel ist es diesen Planeten zu verlassen, das er immer wieder versucht zu erreichen.',
+    series: 'Deponia',
     story: true,
     minplayers: 1,
     published: '2.6.2014',
@@ -186,7 +188,7 @@ data = [
   {
     background: 'generic/diamond.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/214490/header.jpg?t=1710915583',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/214490/header.jpg',
     description:
       'In <b>Alien: Isolation</b> ist man auf einem verlassenen Raumschiff und versucht die Gefahren dort zu umgehen, um zu überleben.',
     story: true,
@@ -198,10 +200,10 @@ data = [
   },
   {
     background: 'the_witcher_1.jpg',
-    image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/20900/header.jpg?t=1709033573',
+    image: 'https://cdn.cloudflare.steamstatic.com/steam/apps/20900/header.jpg',
     description:
       'In <b>The Witcher</b> spielt man als Geralt von Riva. Er ist ein Hexer im Mittelalter, welcher in Konflikt mit einer geheimnisvollen Organisation kommt.',
+    series: 'The Witcher',
     story: true,
     minplayers: 1,
     published: '25.10.2007',
@@ -212,7 +214,7 @@ data = [
   {
     background: 'generic/default.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/1222700/header.jpg?t=1707868347',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1222700/header.jpg',
     description:
       'In <b>A Way Out</b> spielt man zwei Verbrecher, die gemeinsam aus einem Gefängnis ausbrechen und ein freies Leben führen wollen...',
     story: true,
@@ -229,7 +231,7 @@ data = [
   {
     background: 'generic/default.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/437160/header.jpg?t=1711459414',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/437160/header.jpg',
     description:
       "In <b>A Lion's Song</b> spielt man in vier Kapiteln jeweils eine andere Person, die auf der Suche nach Ideen und Verbindungen ist. Diese begleitet man bei der Entstehung ihrer Werke.",
     story: true,
@@ -241,7 +243,7 @@ data = [
   {
     background: 'among_us.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg?t=1711619017',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/945360/header.jpg',
     description:
       'In <b>Among Us</b> ist man mit seiner Crew im Weltall unterwegs, aber pass auf es gibt einen oder mehrere Verräter unter euch.',
     minplayers: 4,
@@ -255,7 +257,7 @@ data = [
   {
     background: 'the_spectrum_retreat.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/763250/header.jpg?t=1710781709',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/763250/header.jpg',
     description:
       '<b>The Spectrum Retreat</b> ist ein Puzzlespiel dessen Level mit der Transportierung von Farben zwischen Blöcken gelöst werden können.',
     story: true,
@@ -268,7 +270,7 @@ data = [
   {
     background: 'obduction.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/306760/header.jpg?t=1709328758',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/306760/header.jpg',
     description:
       '<b>Obduction</b> ist ein Puzzlespiel, das in einer Realität spielt in der Spheren aus verschiedenen Welten durch Technologie miteinander kombiniert werden.',
     story: true,
@@ -281,9 +283,10 @@ data = [
   {
     background: 'generic/ruby.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/752590/header.jpg?t=1711445014',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/752590/header.jpg',
     description:
       'In <b>A Plague Tale: Innocence</b> spielt man Amicia mit ihrem kleinen Bruder, Hugo, welche vor der Inquisition fliehen müssen während das Land in Krankheit versinkt.',
+    series: 'A Plague Tale',
     story: true,
     minplayers: 1,
     published: '14.5.2019',
@@ -294,7 +297,7 @@ data = [
   {
     background: 'generic/emerald_silver.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/327220/header.jpg?t=1710865603',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/327220/header.jpg',
     description:
       "In <b>Anna's Quest</b> spielt man ein Mädchen mit besonderen Fähigkeiten, die sich immer Rätsel stellen muss.",
     story: true,
@@ -311,9 +314,10 @@ data = [
   {
     background: 'generic/2x-obsidian_silver.jpg',
     image:
-      'https://cdn.cloudflare.steamstatic.com/steam/apps/289950/header.jpg?t=1709547869',
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/289950/header.jpg',
     description:
       'Im <b>Construction Simulator 2015</b> baut man mit verschiedensten Baufahrzeugen Häuser.',
+    series: 'Construction Simulator',
     story: true,
     players: 4,
     minplayers: 1,
@@ -325,6 +329,106 @@ data = [
     achievements: {
       progress: 37,
       total: 51,
+    },
+  },
+  {
+    background: 'a_story_about_my_uncle.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/278360/header.jpg',
+    description:
+      'In <b>A Story About My Uncle</b> folgt man dem Hauptcharakter auf der Suche nach seinem Onkel. Das führt ihn durch eine unbekannte Welt in der er sich mit Hilfe einer Art Enterhaken fortbewegen muss.',
+    story: true,
+    minplayers: 1,
+    published: '28.5.2014',
+    lastPlayed: '25.8.2023',
+    rating: 5,
+    time: '12h 15min',
+    achievements: {
+      progress: 1,
+      total: 15,
+    },
+  },
+  {
+    background: 'generic/gold.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1706610/header.jpg',
+    description:
+      '<b>PIXASSO</b> ist ein einfaches entspannendes Pixel-Art-Coloring Spiel.',
+    series: 'PIXASSO',
+    story: true,
+    minplayers: 1,
+    published: '14.8.2021',
+    lastPlayed: '20.11.2021',
+    rating: 3,
+    time: '8h 43min',
+    achievements: {
+      progress: 52,
+      total: 52,
+    },
+  },
+  {
+    background: 'generic/gold.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/692200/header.jpg',
+    description:
+      'In <b>aMAZE Dark Times</b> muss man in knapper Zeit einen kleinen Ball präzise durch verschiedene Labyrinthe navigieren.',
+    series: 'aMAZE',
+    story: true,
+    minplayers: 1,
+    published: '17.8.2017',
+    lastPlayed: '8.8.2023',
+    rating: 5,
+    time: '6h 7min',
+    achievements: {
+      progress: 210,
+      total: 210,
+    },
+  },
+  {
+    background: 'generic/default.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1660490/header.jpg',
+    description:
+      'In <b>Unreal Golf</b> spielt man ein äußerst unrealistisches, aber schwieriges und unterhaltsames 2D Golf.',
+    story: true,
+    minplayers: 1,
+    published: '24.6.2021',
+    lastPlayed: '10.8.2023',
+    rating: 2,
+    time: '1h 46min',
+  },
+  {
+    background: 'generic/gold.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1721940/header.jpg',
+    description:
+      '<b>PIXASSO 3</b> ist ein einfaches entspannendes Pixel-Art-Coloring Spiel.',
+    story: true,
+    minplayers: 1,
+    published: '3.9.2021',
+    lastPlayed: '6.9.2022',
+    rating: 3,
+    time: '2h 42min',
+    achievements: {
+      progress: 52,
+      total: 52,
+    },
+  },
+  {
+    background: 'generic/gold.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/713050/header.jpg',
+    description:
+      '<b>Vampires!</b> ist ein einfaches 2D-Physik basiertes Spiel bei dem man die Menschen vor Vampiren beschützen muss, indem man in verschiedener Reihenfolge einzelne Spielelemente zerstört.',
+    story: true,
+    minplayers: 1,
+    published: '6.10.2017',
+    lastPlayed: '10.8.2023',
+    rating: 1,
+    time: '1h 1min',
+    achievements: {
+      progress: 43,
+      total: 43,
     },
   },
 ];

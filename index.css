@@ -16,7 +16,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-small;
   -webkit-print-color-adjust: exact !important;
-  text-align: justify;
   display: flex;
   flex-direction: column;
 }
@@ -77,4 +76,16 @@ th {
   position: relative;
   z-index: 1;
   padding: 0 2.5px;
+}
+p {
+  text-align: justify;
+}
+.fillstar {
+  display: inline-block;
+  width: 0.835em;
+}
+.outlinestar {
+  color: black;
+  position: relative;
+  left: -0.835em;
 }

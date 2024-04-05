@@ -40,15 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
               <th>Multiplayer Typ</th>
               <th>${card.multiplayer}</th>
             </tr>
+            <tr${card.series ? '' : ' style="display: none"'}>
+              <th>Spieleserie</th>
+              <th>${card.series}</th>
+            </tr>
           </table>
           <div style="flex: 1"></div>
           <div style="height: 1.5em">
             <span class="time" style="visibility: ${
               card.time ? 'visible' : 'hidden'
             }">${card.time}</span>
-            <span class="rating">${'<span style="color: yellow;display:inline-block;width:0.835em">★<span style="color: black; position: relative; left: -0.835em;">☆</span></span>'.repeat(
+            <span class="rating">${'<span class="fillstar" style="color: yellow">★<span class="outlinestar">☆</span></span>'.repeat(
               card.rating
-            )}${'☆'.repeat(5 - card.rating)}</span>
+            )}${'<span class="fillstar" style="color: grey">★<span class="outlinestar">☆</span></span>'.repeat(
+      5 - card.rating
+    )}</span>
           </div>
           <div class="bar" style="display: ${
             Object.hasOwn(card, 'achievements') ? 'block' : 'none'
