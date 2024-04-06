@@ -44,11 +44,6 @@ th {
 .players {
   font-size: large;
 }
-.story {
-  font-family: 'SymbolaRegular';
-  font-weight: normal;
-  font-style: normal;
-}
 .players {
   float: right;
   position: relative;
