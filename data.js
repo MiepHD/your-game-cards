@@ -120,7 +120,7 @@ data = [
     minplayers: 1,
     published: '22.7.2016',
     lastPlayed: '26.11.2023',
-    multiplayer: 'Lokal, Online',
+    multiplayer: 'Lokal, Online, Nucleus',
     rating: 5,
     time: '55h 37min',
     achievements: {
@@ -750,7 +750,7 @@ data = [
     background: 'generic/emerald.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/203160/header.jpg',
-    description: '',
+    description: ``,
     series: 'Tomb Raider Trilogy',
     story: true,
     players: 8,
@@ -765,7 +765,7 @@ data = [
     background: 'generic/emerald.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/391220/header.jpg',
-    description: '',
+    description: ``,
     series: 'Tomb Raider Trilogy',
     story: true,
     minplayers: 1,
@@ -778,12 +778,60 @@ data = [
     background: 'relicta.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/941570/header.jpg',
-    description: '',
+    description: ``,
     story: true,
     minplayers: 1,
     published: '3.8.2020',
     lastPlayed: '25.8.2022',
     rating: 5,
     time: '31h 8min',
+  },
+  {
+    background: 'generic/default.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/225080/header.jpg',
+    description: ``,
+    story: true,
+    players: 2,
+    minplayers: 1,
+    published: '7.8.2013',
+    lastPlayed: '25.8.2022',
+    multiplayer: 'Lokal',
+    rating: 3,
+    time: '3h 39min',
+  },
+  {
+    background: '',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/973810/header.jpg',
+    description: ``,
+    story: 2,
+    players: 2,
+    minplayers: 1,
+    published: '27.1.2021',
+    lastPlayed: '28.3.2023',
+    multiplayer: 'Online, Nucleus',
+    rating: 5,
+    time: '71h 43min',
+    achievements: {
+      progress: 36,
+      total: 51,
+    },
+  },
+  {
+    background: '',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1256230/header.jpg',
+    description: ``,
+    story: true,
+    minplayers: 1,
+    published: '14.3.2022',
+    lastPlayed: '4.4.2024',
+    rating: 5,
+    time: '39h 46min',
+    achievements: {
+      progress: 14,
+      total: 14,
+    },
   },
 ];

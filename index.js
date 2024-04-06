@@ -20,7 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="container">
             <span class="story"${
               Object.hasOwn(card, 'story') ? '' : ' style="display: none"'
-            }>🕮 ${card.story ? '✓' : 'X'}</span>
+            }>&#x1F56E; ${
+      typeof card.story === 'number'
+        ? '&#x2713;'.repeat(card.story)
+        : card.story
+        ? '&#x2713;'
+        : 'X'
+    }</span>
             <span class="players">${'𐀪'.repeat(
               card.players - card.minplayers
             )}${'<span style="color: blue">𐀪</span>'.repeat(
