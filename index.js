@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="container">
             <span class="story"${
               Object.hasOwn(card, 'story') ? '' : ' style="display: none"'
-            }>📖 ${
+            }>🕮 ${
       typeof card.story === 'number'
         ? '&#x2713;'.repeat(card.story)
         : card.story
