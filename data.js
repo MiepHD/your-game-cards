@@ -801,10 +801,15 @@ data = [
     time: '3h 39min',
   },
   {
-    background: '',
+    background: 'journey_to_the_savage_planet.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/973810/header.jpg',
-    description: ``,
+    description: `
+      In <b>Journey to the Savage Planet</b> erforscht man einen 
+      unbekannten Planeten, um herauszufinden, ob Menschen darauf Leben 
+      können. Dafür muss man sämtliche Dinge auf dem Planeten indexieren, 
+      was sich als eine schwierige Aufgabe herausstellt.
+    `,
     story: 2,
     players: 2,
     minplayers: 1,
@@ -819,11 +824,11 @@ data = [
     },
   },
   {
-    background: '',
+    background: 'generic/diamond_gold.jpg',
     image:
       'https://cdn.cloudflare.steamstatic.com/steam/apps/1256230/header.jpg',
     description: ``,
-    story: true,
+    story: 2,
     minplayers: 1,
     published: '14.3.2022',
     lastPlayed: '4.4.2024',
@@ -833,5 +838,42 @@ data = [
       progress: 14,
       total: 14,
     },
+  },
+  {
+    background: '',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1127610/header.jpg',
+    description: ``,
+    story: true,
+    minplayers: 1,
+    published: '26.2.2020',
+    lastPlayed: '1.7.2023',
+    rating: 4,
+    time: '5h 4min',
+  },
+  {
+    background: 'generic/ruby.jpg',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/999220/header.jpg',
+    description: ``,
+    story: true,
+    minplayers: 1,
+    published: '20.10.2020',
+    lastPlayed: '18.8.2022',
+    rating: 3,
+    time: '12h 33min',
+  },
+  {
+    background: '',
+    image:
+      'https://cdn.cloudflare.steamstatic.com/steam/apps/1004490/header.jpg',
+    description: ``,
+    story: true,
+    players: 4,
+    minplayers: 1,
+    published: '2.12.2019',
+    lastPlayed: '18.8.2023',
+    rating: 5,
+    time: '11h',
   },
 ];

@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elem.clientHeight == 0) i++;
   }
   if (i > 0)
-    $(`<p style="color:red"">${i} space elements are too small!</p>`).appendTo(
-      $('body')
-    );
+    $(
+      `<p style="color:red"">${i / 2} space elements are too small!</p>`
+    ).appendTo($('body'));
   if (i > 0) console.log(`${i} space elements are too small!`);
 });
