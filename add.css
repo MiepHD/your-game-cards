@@ -1,0 +1,15 @@
+.outlinestar,
+.players > span {
+  cursor: pointer;
+}
+[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+}
+#options {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.cover {
+  background-color: gray;
+}

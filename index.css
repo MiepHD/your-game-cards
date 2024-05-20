@@ -4,6 +4,8 @@ body {
   row-gap: 15px;
 }
 .card {
+  overflow: hidden;
+  position: relative;
   border-color: black;
   border-width: 1px;
   width: 200px;
@@ -12,14 +14,13 @@ body {
   margin: 5px;
   border-radius: 15px;
   padding: 10px;
-  background-color: lightgray;
   font-family: Arial, Helvetica, sans-serif;
   font-size: x-small;
   -webkit-print-color-adjust: exact !important;
   display: flex;
   flex-direction: column;
 }
-img {
+.cover {
   width: 100%;
   border-radius: 10px 10px 0 0;
   min-height: 93px;

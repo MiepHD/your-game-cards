@@ -6,23 +6,31 @@
 //33% Bronze
 //66% Silber
 //99% Gold
+data = JSON.parse(localStorage.getItem('data'));
 document.addEventListener('DOMContentLoaded', () => {
   for (card of data) {
     elem = $(`
-        <div class="card" style="background-image: url(assets/${
-          card.background
-        })">
-          <img
-            src="${card.image}"
-          />
-          <div class="space"></div>
-          <p>${card.description}</p>
+      <div class="card">
+        <img class="background" src="assets/generic/default.png" />
+        <img class="foreground" src="" />
+        ${generateIcons(card.icon)}
+        ${
+          card.image
+            ? `<img class="cover"
+        src="${card.image}"
+      />`
+            : ''
+        }
+        <div class="space"></div>
+          ${card.description ? `<p>${card.description}</p>` : ''}
           <div class="container">
             <span class="story"${
               Object.hasOwn(card, 'story') ? '' : ' style="display: none"'
             }>&#x1F56E; ${
       typeof card.story === 'number'
-        ? '&#x2713;'.repeat(card.story)
+        ? card.story == 0
+          ? 'X'
+          : '&#x2713;'.repeat(card.story)
         : card.story
         ? '&#x2713;'
         : 'X'
@@ -34,10 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
     )}</span>
           </div>
           <table>
-            <tr>
-              <th>Veröffentlichung</th>
-              <th>${card.published}</th>
-            </tr>
+            ${
+              card.published
+                ? `<tr>
+            <th>Veröffentlichung</th>
+            <th>${card.published}</th>
+          </tr>`
+                : ''
+            }
             <tr${card.lastPlayed ? '' : ' style="display: none"'}>
               <th>Zuletzt gespielt</th>
               <th>${card.lastPlayed}</th>
@@ -53,9 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
           </table>
           <div class="space"></div>
           <div style="height: 1.5em">
-            <span class="time" style="visibility: ${
-              card.time ? 'visible' : 'hidden'
-            }">${card.time}</span>
+            ${
+              card.time
+                ? `<span class="time">${card.time['hours']}h ${card.time['minutes']}min</span>`
+                : ''
+            }
             <span class="rating">${'<span class="fillstar" style="color: yellow">★<span class="outlinestar">☆</span></span>'.repeat(
               card.rating
             )}${'<span class="fillstar" style="color: grey">★<span class="outlinestar">☆</span></span>'.repeat(
@@ -76,9 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
       card.achievements ? card.achievements.total : 0
     }<span style="float: right">${
       card.achievements
-        ? Math.round(
-            (card.achievements.progress * 100) / card.achievements.total
-          )
+        ? card.achievements.total == 0
+          ? 0
+          : Math.round(
+              (card.achievements.progress * 100) / card.achievements.total
+            )
         : 0
     }%</span>
             </div>
@@ -97,3 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ).appendTo($('body'));
   if (i > 0) console.log(`${i} space elements are too small!`);
 });
+
+generateIcons = (url) => {
+  elements = '';
+  for (let i = 1; i < 45; i++) {
+    elements += `<img class="icon pos${i}" src="${url}" />`;
+  }
+  return elements;
+};
