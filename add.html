@@ -2,62 +2,203 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="add.css" />
     <script src="BackgroundImage.js"></script>
+    <script src="save.js"></script>
     <script src="add.js"></script>
     <title>Add Item | Your Game Cards</title>
   </head>
   <body>
+    <canvas style="display: none"></canvas>
+    <a id="back" href="/index.html">&DoubleLeftArrow;&nbsp;<span>Back</span></a>
+    <span id="error" style="display: none"
+      >Bild muss Verhältnis 1:1 haben!</span
+    >
     <div class="card">
       <img class="background" src="assets/generic/default.png" />
-      <img class="foreground" src="" />
-      <img class="icon pos1" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos2" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos3" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos4" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos5" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos6" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos7" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos8" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos9" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos10" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos11" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos12" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos13" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos14" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos15" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos16" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos17" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos18" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos19" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos20" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos21" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos22" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos23" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos24" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos25" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos26" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos27" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos28" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos29" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos30" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos31" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos32" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos33" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos34" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos35" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos36" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos37" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos38" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos39" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos40" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos41" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos42" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos43" src="assets/icons/a_story_about_my_uncle.png" />
-      <img class="icon pos44" src="assets/icons/a_story_about_my_uncle.png" />
+      <img
+        class="foreground"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos1"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos2"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos3"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos4"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos5"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos6"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos7"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos8"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos9"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos10"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos11"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos12"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos13"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos14"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos15"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos16"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos17"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos18"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos19"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos20"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos21"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos22"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos23"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos24"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos25"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos26"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos27"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos28"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos29"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos30"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos31"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos32"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos33"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos34"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos35"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos36"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos37"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos38"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos39"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos40"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos41"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos42"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos43"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
+      <img
+        class="icon pos44"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+      />
       <img class="cover" src="" style="display: none" />
       <div class="space"></div>
       <p id="description" contenteditable="true" placeholder="Beschreibung"></p>

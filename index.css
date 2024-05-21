@@ -95,3 +95,24 @@ p {
 .space {
   flex: 1;
 }
+
+.delete {
+  position: absolute;
+  left: calc(100% - 25px);
+  top: 5px;
+  height: 10px;
+  width: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 15px;
+  border: 1px solid;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+@media print {
+  a.card,
+  .delete {
+    display: none;
+  }
+}

@@ -196,10 +196,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('toggleachievements').checked)
       saveData['achievements'] = values['achievements'];
 
-    currentdata = JSON.parse(localStorage.getItem('data'));
-    currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
-    localStorage.setItem('data', JSON.stringify(currentdata));
-    location.href = '/index.html';
+    //Get image
+    save((icon) => {
+      saveData['icon'] = icon;
+
+      //Save everything to localStorage
+      currentdata = JSON.parse(localStorage.getItem('data'));
+      currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
+      localStorage.setItem('data', JSON.stringify(currentdata));
+      location.href = '/index.html';
+    });
   });
 });
 

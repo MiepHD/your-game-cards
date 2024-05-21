@@ -8,12 +8,14 @@
 //99% Gold
 data = JSON.parse(localStorage.getItem('data'));
 document.addEventListener('DOMContentLoaded', () => {
+  let i = 0;
   for (card of data) {
     elem = $(`
       <div class="card">
+        <div class="delete" data-pos="${i}"><strong>X</strong></div>
         <img class="background" src="assets/generic/default.png" />
         <img class="foreground" src="" />
-        ${generateIcons(card.icon)}
+        ${card.icon ? generateIcons(card.icon) : ''}
         ${
           card.image
             ? `<img class="cover"
@@ -101,8 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `);
-    elem.appendTo($('body'));
+    elem.prependTo($('body'));
+    i++;
   }
+
+  for (elem of document.querySelectorAll('.delete')) {
+    elem.addEventListener('click', (e) => {
+      id = parseInt(e.currentTarget.getAttribute('data-pos'));
+      currentData = JSON.parse(localStorage.getItem('data'));
+      currentData.splice(id, 1);
+      localStorage.setItem('data', JSON.stringify(currentData));
+      location.reload();
+    });
+  }
+
   i = 0;
   for (elem of document.querySelectorAll('.space')) {
     if (elem.clientHeight == 0) i++;

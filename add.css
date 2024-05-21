@@ -13,3 +13,56 @@
 .cover {
   background-color: gray;
 }
+.story,
+tr > th:nth-child(1),
+#percentage,
+.count,
+.time {
+  cursor: default;
+}
+#story,
+#progress,
+#total,
+#hours,
+#minutes {
+  cursor: text;
+}
+html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  width: fit-content;
+  height: fit-content;
+  padding: 30px;
+  border-radius: 15px;
+  gap: 30px;
+  border: 1px solid black;
+  position: relative;
+}
+input[type='checkbox'] {
+  width: fit-content;
+}
+#back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: -0.82em;
+  font-size: xx-large;
+  text-decoration: none;
+  color: black;
+}
+#back > span {
+  font-size: medium;
+}
+#error {
+  position: absolute;
+  top: 0.6em;
+  left: 50%;
+  color: #ff4c4c;
+}
