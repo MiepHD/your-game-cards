@@ -12,6 +12,19 @@
     <title>Your Game Cards</title>
   </head>
   <body>
+    <div id="dialogback" style="display: none">
+      <dialog open>
+        <button onclick="loadItems(false)">Aktuelle Karten verwerfen</button>
+        <button onclick="loadItems(true)">
+          Karten zu existierenden hinzufügen
+        </button>
+        <button
+          onclick="document.getElementById('dialogback').style.display = 'none'"
+        >
+          Abbrechen
+        </button>
+      </dialog>
+    </div>
     <a class="card" href="/add.html">
       <img class="background" src="assets/add.png" />
     </a>

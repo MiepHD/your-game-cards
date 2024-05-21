@@ -13,11 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'data:text/plain,' + encodeURIComponent(plain);
 
   document.querySelector('input[type=file]').addEventListener('change', () => {
-    new FileHandler().getText((importedData) => {
-      if (typeof JSON.parse(importedData) == 'object')
-        localStorage.setItem('data', importedData);
-      location.reload();
-    });
+    document.getElementById('dialogback').style.display = 'block';
   });
   //Add cards
   let i = 0;
@@ -170,4 +166,21 @@ generateBackground = (hours, percentage) => {
   background.setTime(hours);
   background.setAchievements(percentage);
   return backgroundelement.outerHTML + foregroundelement.outerHTML;
+};
+
+loadItems = (add) => {
+  new FileHandler().getText((importedData) => {
+    if (typeof JSON.parse(importedData) == 'object')
+      add
+        ? localStorage.setItem(
+            'data',
+            JSON.stringify(
+              JSON.parse(importedData).concat(
+                JSON.parse(localStorage.getItem('data'))
+              )
+            )
+          )
+        : localStorage.setItem('data', importedData);
+    location.reload();
+  });
 };

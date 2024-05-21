@@ -7,6 +7,11 @@ values = {
     total: 0,
   },
 };
+unload = () => {
+  saveInfo();
+};
+window.addEventListener('beforeunload', unload);
+
 document.addEventListener('DOMContentLoaded', () => {
   //Create background
   background = new BackgroundImage(
@@ -99,7 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     input = e.currentTarget.value;
     image = document.querySelector('.cover');
     image.style.display = input == '' ? 'none' : '';
-    image.src = input;
+    image.src = input.includes('http')
+      ? input
+      : `https://cdn.cloudflare.steamstatic.com/steam/apps/${input}/header.jpg`;
   });
 
   //Adaptive background for time
