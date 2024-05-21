@@ -83,5 +83,5 @@ function saveInfo() {
     ? currentdata.push(saveData)
     : (currentdata = [saveData]);
   localStorage.setItem('data', JSON.stringify(currentdata));
-  location.href = '/index.html';
+  location.href = 'index.html';
 }
