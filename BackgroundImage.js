@@ -1,8 +1,12 @@
 class BackgroundImage {
   achievements = '';
   time = '';
-  background = document.querySelector('.background');
-  foreground = document.querySelector('.foreground');
+  background;
+  foreground;
+  constructor(background, foreground) {
+    this.background = background;
+    this.foreground = foreground;
+  }
   updateBackground() {
     let timeApplied = false;
 
@@ -21,12 +25,30 @@ class BackgroundImage {
       ? (this.foreground.src = 'assets/generic/part_' + this.time + '.png')
       : (this.foreground.src = '');
   }
-  setAchievements(type) {
-    this.achievements = type;
+  setAchievements(percentage) {
+    if (percentage < 33) {
+      this.achievements = '';
+    } else if (percentage >= 33 && percentage < 66) {
+      this.achievements = 'bronze';
+    } else if (percentage >= 66 && percentage < 99) {
+      this.achievements = 'silver';
+    } else if (percentage >= 99) {
+      this.achievements = 'gold';
+    }
     this.updateBackground();
   }
-  setTime(type) {
-    this.time = type;
+  setTime(hours) {
+    if (hours < 10) {
+      this.time = '';
+    } else if (hours >= 10 && hours < 20) {
+      this.time = 'ruby';
+    } else if (hours >= 20 && hours < 40) {
+      this.time = 'emerald';
+    } else if (hours >= 40 && hours < 80) {
+      this.time = 'diamond';
+    } else if (hours >= 80) {
+      this.time = 'obsidian';
+    }
     this.updateBackground();
   }
 }

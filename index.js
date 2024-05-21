@@ -6,15 +6,30 @@
 //33% Bronze
 //66% Silber
 //99% Gold
-data = JSON.parse(localStorage.getItem('data'));
+plain = localStorage.getItem('data');
+data = JSON.parse(plain);
 document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('export').href =
+    'data:text/plain,' + encodeURIComponent(plain);
   let i = 0;
   for (card of data) {
     elem = $(`
       <div class="card">
         <div class="delete" data-pos="${i}"><strong>X</strong></div>
-        <img class="background" src="assets/generic/default.png" />
-        <img class="foreground" src="" />
+        ${generateBackground(
+          card['time']
+            ? card['time']['hours']
+              ? card['time']['hours']
+              : 0
+            : 0,
+          card.achievements
+            ? card.achievements.total == 0
+              ? 0
+              : Math.round(
+                  (card.achievements.progress * 100) / card.achievements.total
+                )
+            : 0
+        )}
         ${card.icon ? generateIcons(card.icon) : ''}
         ${
           card.image
@@ -134,4 +149,15 @@ generateIcons = (url) => {
     elements += `<img class="icon pos${i}" src="${url}" />`;
   }
   return elements;
+};
+
+generateBackground = (hours, percentage) => {
+  backgroundelement = document.createElement('img');
+  backgroundelement.setAttribute('class', 'background');
+  foregroundelement = document.createElement('img');
+  foregroundelement.setAttribute('class', 'foreground');
+  const background = new BackgroundImage(backgroundelement, foregroundelement);
+  background.setTime(hours);
+  background.setAchievements(percentage);
+  return backgroundelement.outerHTML + foregroundelement.outerHTML;
 };

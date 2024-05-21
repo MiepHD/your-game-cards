@@ -1,30 +1,81 @@
-const reader = new FileReader();
+function saveInfo() {
+  saveData = {};
+  //Cover image
+  if (document.getElementById('image').value != '')
+    saveData['image'] = document.getElementById('image').value;
 
-function resize(imagePath, callback) {
-  const originalImage = new Image();
-  originalImage.src = imagePath;
-  const canvas = document.querySelector('canvas');
-  const ctx = canvas.getContext('2d');
-  originalImage.addEventListener('load', () => {
-    const originalWidth = originalImage.naturalWidth;
-    const originalHeight = originalImage.naturalHeight;
-    const ratio = originalWidth / originalHeight;
-    if (ratio != 1) {
-      document.getElementById('error').style.setProperty('display', '');
-      return;
-    }
-    canvas.width = 48;
-    canvas.height = 48;
-    ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
-    callback(document.querySelector('canvas').toDataURL('image/jpeg', 0.3));
-  });
-}
+  //Description
+  if (
+    document.getElementById('description').innerHTML != '' &&
+    document.getElementById('toggledescription').checked
+  )
+    saveData['description'] = document.getElementById('description').innerHTML;
 
-function save(callback) {
-  file = document.querySelector('input[type=file]').files[0];
-  reader.addEventListener('load', (res) => {
-    const image = res.target.result;
-    resize(image, callback);
+  //Story
+  if (document.getElementById('togglestory').checked)
+    saveData['story'] = values['story'];
+
+  //Players
+  players = document.querySelector('.players').children;
+  players.length < values['minplayers']
+    ? (saveData['minplayers'] = players.length)
+    : (saveData['minplayers'] = values['minplayers']);
+  saveData['players'] = players.length;
+
+  //Published
+  if (
+    document.getElementById('togglepublished').checked &&
+    document.getElementById('vpublished').innerHTML != ''
+  )
+    saveData['published'] = document.getElementById('vpublished').innerHTML;
+
+  //LastPlayed
+  if (
+    document.getElementById('togglelastplayed').checked &&
+    document.getElementById('vlastplayed').innerHTML != ''
+  )
+    saveData['lastplayed'] = document.getElementById('vlastplayed').innerHTML;
+
+  //Multiplayer
+  if (
+    document.getElementById('togglemultiplayer').checked &&
+    document.getElementById('vmultiplayer').innerHTML != ''
+  )
+    saveData['multiplayer'] = document.getElementById('vmultiplayer').innerHTML;
+
+  //Series
+  if (
+    document.getElementById('toggleseries').checked &&
+    document.getElementById('vseries').innerHTML != ''
+  )
+    saveData['multiplayer'] = document.getElementById('vseries').innerHTML;
+
+  //Time
+  if (document.getElementById('toggletime').checked) {
+    hours = document.getElementById('hours').innerHTML;
+    minutes = document.getElementById('minutes').innerHTML;
+    saveData['time'] = {
+      hours: hours == '' ? 0 : parseInt(hours),
+      minutes: minutes == '' ? 0 : parseInt(minutes),
+    };
+  }
+
+  //Rating
+  if (document.getElementById('togglerating').checked)
+    saveData['rating'] = values['currentRating'];
+
+  //Achievements
+  if (document.getElementById('toggleachievements').checked)
+    saveData['achievements'] = values['achievements'];
+
+  //Get image
+  saveImage.save((icon) => {
+    if (icon != null) saveData['icon'] = icon;
+
+    //Save everything to localStorage
+    currentdata = JSON.parse(localStorage.getItem('data'));
+    currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
+    localStorage.setItem('data', JSON.stringify(currentdata));
+    location.href = '/index.html';
   });
-  reader.readAsDataURL(file);
 }
