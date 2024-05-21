@@ -123,9 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  //Save to localStorage
-  document.getElementById('save').addEventListener('click', () => saveInfo());
 });
 
 //Sets min player count

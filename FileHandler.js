@@ -17,7 +17,7 @@ class FileHandler {
       canvas.width = 48;
       canvas.height = 48;
       ctx.drawImage(originalImage, 0, 0, canvas.width, canvas.height);
-      callback(document.querySelector('canvas').toDataURL('image/jpeg', 0.3));
+      callback(document.querySelector('canvas').toDataURL('image/png', 0.3));
     });
   }
 

@@ -72,3 +72,16 @@ input[type='checkbox'] {
   left: 50%;
   color: #ff4c4c;
 }
+
+.right {
+  position: absolute;
+  left: 100%;
+  padding-left: 10px;
+  width: max-content;
+}
+
+.left {
+  text-align: right;
+  padding-right: 10px;
+  width: auto;
+}

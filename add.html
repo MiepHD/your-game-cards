@@ -21,6 +21,11 @@
         <button><a href="/index.html" onclick="window.removeEventListener('beforeunload', unload)">Verlassen ohne zu speichern</a></button>
       </dialog>
     </div>
+    <div style="flex: 1;">
+      <p class="left">Für Beschreibung, Zeit und Fortschritt Felder anklicken</p>
+      <p class="left">Für Story (🕮) die Anzahl der Haken eingeben 0-9 (0 ist ein X)</p>
+      <p class="left">Für minimale Spieler (<span style="color:blue">𐀪</span>) und Bewertung (★) gewünschte Anzahl anklicken</p>
+    </div>
     <main>
       <span id="back" onclick="document.getElementById('dialogback').style.setProperty('display', 'block')"
         >&DoubleLeftArrow;&nbsp;<span>Back</span></span
@@ -347,23 +352,25 @@
             type="url"
             placeholder="https://cdn.cloudflare.steamstatic.com/steam/apps/0000000/header.jpg"
           />
-          <a href="https://steamdb.info/">SteamDB</a>
+          <a href="https://steamdb.info/">SteamDB</a><span class="right">Bild-Url oder Steam App ID eingeben</span>
         </div>
 
         <label>Rich Text:</label>
         <div>
           <button type="button" onclick="document.execCommand('bold')">
-            Bold
+            Fett
           </button>
           <button type="button" onclick="document.execCommand('italic')">
-            Italic
+            Kursiv
           </button>
           <button type="button" onclick="document.execCommand('underline')">
-            Underline
+            Unterstrichen
           </button>
+          <span class="right">Text markieren und Fett, Kursiv oder Unterstrichen anklicken</span>
         </div>
-        <button id="save" type="button">Speichern</button>
+        <a href="/index.html"><button id="save" type="button">Speichern</button></a>
       </div>
     </div>
   </main>
+  <div style="flex: 1"></div>
 </html>

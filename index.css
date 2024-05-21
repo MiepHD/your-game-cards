@@ -124,7 +124,7 @@ p {
   color: black;
 }
 
-input[type='file']::-webkit-file-upload-button {
+#import::-webkit-file-upload-button {
   visibility: hidden;
 }
 #export {

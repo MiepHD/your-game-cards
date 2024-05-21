@@ -1,10 +1,7 @@
 function saveInfo() {
   saveData = {};
   //Cover image
-  if (
-    document.getElementById('image').value !=
-    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
-  )
+  if (document.getElementById('image').value != '')
     saveData['image'] = document.getElementById('image').value;
 
   //Description
@@ -72,7 +69,10 @@ function saveInfo() {
     saveData['achievements'] = values['achievements'];
 
   //Icon
-  if (document.querySelector('.icon').src != '')
+  if (
+    document.querySelector('.icon').src !=
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
+  )
     saveData['icon'] = document.querySelector('.icon').src;
 
   //Save everything to localStorage
