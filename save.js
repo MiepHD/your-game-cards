@@ -1,7 +1,10 @@
 function saveInfo() {
   saveData = {};
   //Cover image
-  if (document.getElementById('image').value != '')
+  if (
+    document.getElementById('image').value !=
+    'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII='
+  )
     saveData['image'] = document.getElementById('image').value;
 
   //Description
@@ -48,7 +51,7 @@ function saveInfo() {
     document.getElementById('toggleseries').checked &&
     document.getElementById('vseries').innerHTML != ''
   )
-    saveData['multiplayer'] = document.getElementById('vseries').innerHTML;
+    saveData['series'] = document.getElementById('vseries').innerHTML;
 
   //Time
   if (document.getElementById('toggletime').checked) {
@@ -74,7 +77,11 @@ function saveInfo() {
 
   //Save everything to localStorage
   currentdata = JSON.parse(localStorage.getItem('data'));
-  currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
+  params.id
+    ? (currentdata[parseInt(params.id)] = saveData)
+    : currentdata
+    ? currentdata.push(saveData)
+    : (currentdata = [saveData]);
   localStorage.setItem('data', JSON.stringify(currentdata));
   location.href = '/index.html';
 }

@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="add.css" />
     <script src="BackgroundImage.js"></script>
-    <script src="ImageInput.js"></script>
+    <script src="FileHandler.js"></script>
     <script src="save.js"></script>
     <script src="add.js"></script>
+    <script src="loadData.js"></script>
     <title>Add Item | Your Game Cards</title>
   </head>
   <body>
@@ -20,10 +21,7 @@
     >
     <div class="card">
       <img class="background" src="assets/generic/default.png" />
-      <img
-        class="foreground"
-        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
-      />
+      <img class="foreground" src="" />
       <img
         class="icon pos1"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
@@ -323,7 +321,7 @@
         <button id="removeplayer" type="button">-</button>
       </div>
       <label for="icon">Icon:</label>
-      <input id="icon" type="file" />
+      <input id="icon" type="file" accept="image/*" />
       <label for="image">Cover image:</label>
       <div>
         <input

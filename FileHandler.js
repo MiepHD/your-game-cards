@@ -1,4 +1,4 @@
-class ImageInput {
+class FileHandler {
   reader = new FileReader();
 
   resize(imagePath, callback) {
@@ -21,7 +21,7 @@ class ImageInput {
     });
   }
 
-  getData(callback) {
+  getImage(callback) {
     const file = document.querySelector('input[type=file]').files[0];
     this.reader.addEventListener('load', (res) => {
       const image = res.target.result;
@@ -29,6 +29,18 @@ class ImageInput {
     });
     if (typeof file == 'object') {
       this.reader.readAsDataURL(file);
+    } else {
+      callback(null);
+    }
+  }
+
+  getText(callback) {
+    const file = document.querySelector('input[type=file]').files[0];
+    this.reader.addEventListener('load', (res) => {
+      callback(res.target.result);
+    });
+    if (typeof file == 'object') {
+      this.reader.readAsText(file);
     } else {
       callback(null);
     }

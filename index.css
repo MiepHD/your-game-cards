@@ -96,23 +96,49 @@ p {
   flex: 1;
 }
 
-.delete {
+.delete,
+.edit {
   position: absolute;
-  left: calc(100% - 25px);
-  top: 5px;
   height: 10px;
   width: 10px;
   padding: 5px;
   text-align: center;
   border-radius: 15px;
+  top: 5px;
   border: 1px solid;
+  cursor: pointer;
+}
+
+.delete {
+  left: calc(100% - 25px);
   background-color: lightcoral;
+}
+
+.edit {
+  padding-top: 3px;
+  padding-bottom: 7px;
+  background-color: lightgreen;
+  left: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#export {
+  transform: rotate(180deg);
+}
+#import {
+  background-image: url('assets/download.png');
   cursor: pointer;
 }
 
 @media print {
   a.card,
-  .delete {
+  .delete,
+  #import,
+  .edit {
     display: none;
   }
 }

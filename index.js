@@ -11,10 +11,20 @@ data = JSON.parse(plain);
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('export').href =
     'data:text/plain,' + encodeURIComponent(plain);
+
+  document.querySelector('input[type=file]').addEventListener('change', () => {
+    new FileHandler().getText((importedData) => {
+      if (typeof JSON.parse(importedData) == 'object')
+        localStorage.setItem('data', importedData);
+      location.reload();
+    });
+  });
+  //Add cards
   let i = 0;
   for (card of data) {
     elem = $(`
       <div class="card">
+        <a class="edit" href="add.html?id=${i}"><strong>&#9998;</strong></a>
         <div class="delete" data-pos="${i}"><strong>X</strong></div>
         ${generateBackground(
           card['time']
@@ -67,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
           </tr>`
                 : ''
             }
-            <tr${card.lastPlayed ? '' : ' style="display: none"'}>
+            <tr${card.lastplayed ? '' : ' style="display: none"'}>
               <th>Zuletzt gespielt</th>
-              <th>${card.lastPlayed}</th>
+              <th>${card.lastplayed}</th>
             </tr>
             <tr${card.multiplayer ? '' : ' style="display: none"'}>
               <th>Multiplayer Typ</th>

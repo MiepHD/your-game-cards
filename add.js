@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Icon
   document.querySelector('input[type=file]').addEventListener('change', () => {
-    new ImageInput().getData((url) => {
+    new FileHandler().getImage((url) => {
       for (icon of document.querySelectorAll('.icon')) {
         icon.src = url;
       }
