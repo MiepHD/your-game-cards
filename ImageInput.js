@@ -1,4 +1,4 @@
-class SaveImage {
+class ImageInput {
   reader = new FileReader();
 
   resize(imagePath, callback) {
@@ -21,11 +21,11 @@ class SaveImage {
     });
   }
 
-  save(callback) {
+  getData(callback) {
     const file = document.querySelector('input[type=file]').files[0];
     this.reader.addEventListener('load', (res) => {
       const image = res.target.result;
-      resize(image, callback);
+      this.resize(image, callback);
     });
     if (typeof file == 'object') {
       this.reader.readAsDataURL(file);

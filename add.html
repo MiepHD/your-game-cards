@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="icons.css" />
     <link rel="stylesheet" href="add.css" />
     <script src="BackgroundImage.js"></script>
-    <script src="SaveImage.js"></script>
+    <script src="ImageInput.js"></script>
     <script src="save.js"></script>
     <script src="add.js"></script>
     <title>Add Item | Your Game Cards</title>
@@ -200,7 +200,7 @@
         class="icon pos44"
         src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
       />
-      <img class="cover" src="" style="display: none" />
+      <img class="cover" src="" />
       <div class="space"></div>
       <p id="description" contenteditable="true" placeholder="Beschreibung"></p>
       <div class="container">
@@ -326,14 +326,26 @@
       <input id="icon" type="file" />
       <label for="image">Cover image:</label>
       <div>
-        <input id="image" type="url" />
+        <input
+          id="image"
+          type="url"
+          placeholder="https://cdn.cloudflare.steamstatic.com/steam/apps/0000000/header.jpg"
+        />
         <a href="https://steamdb.info/">SteamDB</a>
       </div>
 
       <label>Rich Text:</label>
-      <button id="bold" type="button" onclick="document.execCommand('bold')">
-        Bold
-      </button>
+      <div>
+        <button type="button" onclick="document.execCommand('bold')">
+          Bold
+        </button>
+        <button type="button" onclick="document.execCommand('italic')">
+          Italic
+        </button>
+        <button type="button" onclick="document.execCommand('underline')">
+          Underline
+        </button>
+      </div>
       <button id="save" type="button">Speichern</button>
     </div>
   </body>

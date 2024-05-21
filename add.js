@@ -1,5 +1,3 @@
-const saveImage = new SaveImage();
-
 values = {
   currentRating: 3,
   story: 1,
@@ -108,6 +106,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('hours').addEventListener('input', (e) => {
     hours = parseInt(e.currentTarget.innerHTML);
     background.setTime(hours);
+  });
+
+  //Icon
+  document.querySelector('input[type=file]').addEventListener('change', () => {
+    new ImageInput().getData((url) => {
+      for (icon of document.querySelectorAll('.icon')) {
+        icon.src = url;
+      }
+    });
   });
 
   //Save to localStorage

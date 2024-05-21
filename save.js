@@ -68,14 +68,13 @@ function saveInfo() {
   if (document.getElementById('toggleachievements').checked)
     saveData['achievements'] = values['achievements'];
 
-  //Get image
-  saveImage.save((icon) => {
-    if (icon != null) saveData['icon'] = icon;
+  //Icon
+  if (document.querySelector('.icon').src != '')
+    saveData['icon'] = document.querySelector('.icon').src;
 
-    //Save everything to localStorage
-    currentdata = JSON.parse(localStorage.getItem('data'));
-    currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
-    localStorage.setItem('data', JSON.stringify(currentdata));
-    location.href = '/index.html';
-  });
+  //Save everything to localStorage
+  currentdata = JSON.parse(localStorage.getItem('data'));
+  currentdata ? currentdata.push(saveData) : (currentdata = [saveData]);
+  localStorage.setItem('data', JSON.stringify(currentdata));
+  location.href = '/index.html';
 }
