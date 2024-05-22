@@ -1,0 +1,54 @@
+{
+  "lang": "DE",
+  "main.title": "Deine Spiele-Karten | Your Game Cards",
+
+  "main.dialog.loadCards.discardCurrentCards": "Aktuelle Karten verwerfen",
+  "main.dialog.loadCards.addCards": "Karten zu existierenden hinzufügen",
+  "main.dialog.loadCards.cancel": "Abbrechen",
+
+  "card.release": "Veröffentlichung",
+  "card.lastPlayed": "Zuletzt gespielt",
+  "card.multiplayer-type": "Multiplayer Typ",
+  "card.series": "Spielserie",
+  "card.time.hours": "h",
+  "card.time.minutes": "min",
+  "card.achievements.of": "von",
+
+  "main.export": "Exportieren als Backup / JSON",
+  "main.import": "Importieren aus Backup / JSON",
+
+  "editor.title.addCard": "Karte hinzufügen | Your Game Cards",
+  "editor.title.editCard": "Karte ändern | Your Game Cards",
+
+  "editor.dialog.save.save": "Speichern",
+  "editor.dialog.save.dontSave": "Verlassen ohne zu speichern",
+
+  "editor.description.general": "Für Beschreibung, Zeit und Fortschritt Felder anklicken",
+  "editor.description.story": "Für Fortschritt in der Geschichte (🕮) die Anzahl der Haken eingeben 0-9 (0 ist ein X)",
+  "editor.description.players": "Für minimale Spieler (<span style='color:blue'>𐀪</span>) und Bewertung (★) gewünschte Anzahl anklicken",
+  "editor.description.cover": "Bild-Url oder Steam App ID eingeben",
+  "editor.description.rich-text": "Text markieren und Fett, Kursiv oder Unterstrichen anklicken",
+
+  "editor.navigation.back": "Zurück",
+
+  "editor.error.aspect-ratio": "Bild muss Verhältnis 1:1 haben!",
+
+  "editor.card.placeholder.description": "Beschreibung",
+  "editor.card.placeholder.number": "0",
+  "editor.card.placeholder.date": "00.00.0000",
+  "editor.card.placeholder.multiplayer-type": "Lokal, Online",
+
+  "editor.options.story": "Geschichte:",
+  "editor.options.playtime": "Spielzeit:",
+  "editor.options.achievements": "Errungenschaften:",
+  "editor.options.rating": "Bewertung:",
+  "editor.options.players": "Spieler:",
+  "editor.options.players.add": "+",
+  "editor.options.players.remove": "-",
+  "editor.options.icon": "Symbol:",
+  "editor.options.cover": "Titelbild:",
+  "editor.options.rich-text": "Rich Text:",
+  "editor.options.rich-text.bold": "Fett",
+  "editor.options.rich-text.italic": "Kursiv",
+  "editor.options.rich-text.underline": "Unterstreichen"
+}

@@ -9,17 +9,34 @@
     <script src="BackgroundImage.js"></script>
     <script src="FileHandler.js"></script>
     <script src="index.js"></script>
-    <title>Your Game Cards</title>
+    <script src="translate.js"></script>
+    <title data-translation-id="main.title">Deine Spiele-Karten | Your Game Cards</title>
   </head>
   <body>
+    <div
+      id="changeLanguage"
+      data-translation-id="lang"
+      onclick="switchLanguage()"
+    >
+      DE
+    </div>
     <div id="dialogback" style="display: none">
       <dialog open>
-        <button onclick="loadItems(false)">Aktuelle Karten verwerfen</button>
-        <button onclick="loadItems(true)">
+        <button
+          onclick="loadItems(false)"
+          data-translation-id="main.dialog.loadCards.discardCurrentCards"
+        >
+          Aktuelle Karten verwerfen
+        </button>
+        <button
+          onclick="loadItems(true)"
+          data-translation-id="main.dialog.loadCards.addCards"
+        >
           Karten zu existierenden hinzufügen
         </button>
         <button
           onclick="document.getElementById('dialogback').style.display = 'none'"
+          data-translation-id="main.dialog.loadCards.cancel"
         >
           Abbrechen
         </button>
@@ -29,8 +46,13 @@
       <img class="background" src="assets/add.png" />
     </a>
     <a class="card" id="export" download="your-game-cards-backup.json">
+      <span data-translation-id="main.export">Exportieren als Backup / JSON</span>
       <img class="background" src="assets/download.png" />
     </a>
-    <input class="card" id="import" type="file" accept=".json" />
+    <div class="card">
+      <span data-translation-id="main.import">Importieren aus Backup / JSON</span>
+      <input id="import" type="file" accept=".json"></input>
+      <img class="background" src="assets/download.png" />
+    </div>
   </body>
 </html>

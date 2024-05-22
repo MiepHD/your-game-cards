@@ -11,26 +11,62 @@
     <script src="save.js"></script>
     <script src="add.js"></script>
     <script src="loadData.js"></script>
-    <title>Add Item | Your Game Cards</title>
+    <script src="translate.js"></script>
+    <title data-translation-id="editor.title.addCard">Your Game Cards</title>
   </head>
   <body>
+    <div
+      id="changeLanguage"
+      data-translation-id="lang"
+      onclick="switchLanguage()"
+    >
+      DE
+    </div>
     <canvas style="display: none"></canvas>
     <div id="dialogback" style="display: none">
       <dialog open>
-        <button type="button" onclick="autosave=false;location.href='index.html';">Speichern</button>
-        <button type="button"><a href="index.html" onclick="window.removeEventListener('beforeunload', unload)">Verlassen ohne zu speichern</a></button>
+        <button
+          type="button"
+          onclick="autosave=false;location.href='index.html';"
+          data-translation-id="editor.dialog.save.save"
+        >
+          Speichern
+        </button>
+        <button type="button">
+          <a
+            href="index.html"
+            onclick="window.removeEventListener('beforeunload', unload)"
+            data-translation-id="editor.dialog.save.dontSave"
+            >Verlassen ohne zu speichern</a
+          >
+        </button>
       </dialog>
     </div>
-    <div style="flex: 1;">
-      <p class="left">Für Beschreibung, Zeit und Fortschritt Felder anklicken</p>
-      <p class="left">Für Story (🕮) die Anzahl der Haken eingeben 0-9 (0 ist ein X)</p>
-      <p class="left">Für minimale Spieler (<span style="color:blue">𐀪</span>) und Bewertung (★) gewünschte Anzahl anklicken</p>
+    <div style="flex: 1">
+      <p class="left" data-translation-id="editor.description.general">
+        Für Beschreibung, Zeit und Fortschritt Felder anklicken
+      </p>
+      <p class="left" data-translation-id="editor.description.story">
+        Für Story (🕮) die Anzahl der Haken eingeben 0-9 (0 ist ein X)
+      </p>
+      <p class="left" data-translation-id="editor.description.players">
+        Für minimale Spieler (<span style="color: blue">𐀪</span>) und Bewertung
+        (★) gewünschte Anzahl anklicken
+      </p>
     </div>
     <main>
-      <span id="back" onclick="document.getElementById('dialogback').style.setProperty('display', 'block')"
-        >&DoubleLeftArrow;&nbsp;<span>Back</span></span
+      <span
+        id="back"
+        onclick="document.getElementById('dialogback').style.setProperty('display', 'block')"
+        >&DoubleLeftArrow;&nbsp;<span
+          data-translation-id="editor.navigation.back"
+          >Zurück</span
+        ></span
       >
-      <span id="error" style="display: none"
+      <span
+        id="error"
+        style="display: none"
+        data-translation-id="editor.error.aspect-ratio"
         >Bild muss Verhältnis 1:1 haben!</span
       >
       <div class="card">
@@ -218,6 +254,7 @@
           id="description"
           contenteditable="true"
           placeholder="Beschreibung"
+          data-translation-placeholder-id="editor.card.placeholder.description"
         ></p>
         <div class="container">
           <span class="story"
@@ -231,35 +268,41 @@
         <table>
           <tbody>
             <tr id="published">
-              <th>Veröffentlichung</th>
+              <th data-translation-id="card.release">Veröffentlichung</th>
               <th
                 contenteditable="true"
                 placeholder="00.00.0000"
                 id="vpublished"
+                data-translation-placeholder-id="editor.card.placeholder.date"
               ></th>
             </tr>
             <tr id="lastplayed">
-              <th>Zuletzt gespielt</th>
+              <th data-translation-id="card.lastPlayed">Zuletzt gespielt</th>
               <th
                 contenteditable="true"
                 placeholder="00.00.0000"
                 id="vlastplayed"
+                data-translation-placeholder-id="editor.card.placeholder.date"
               ></th>
             </tr>
             <tr id="multiplayer">
-              <th>Multiplayer Typ</th>
+              <th data-translation-id="card.multiplayer-type">
+                Multiplayer Typ
+              </th>
               <th
                 contenteditable="true"
                 placeholder="Lokal, Online"
                 id="vmultiplayer"
+                data-translation-placeholder-id="editor.card.placeholder.multiplayer-type"
               ></th>
             </tr>
             <tr id="series">
-              <th>Spieleserie</th>
+              <th data-translation-id="card.series">Spieleserie</th>
               <th
                 contenteditable="true"
                 placeholder="Spielserie"
                 id="vseries"
+                data-translation-placeholder-id="card.series"
               ></th>
             </tr>
           </tbody>
@@ -267,9 +310,20 @@
         <div class="space"></div>
         <div style="height: 1.5em">
           <span class="time" style="visibility: visible"
-            ><span id="hours" contenteditable="true" placeholder="0"></span>h
-            <span id="minutes" contenteditable="true" placeholder="0"></span
-            >min</span
+            ><span
+              id="hours"
+              contenteditable="true"
+              placeholder="0"
+              data-translation-placeholder-id="editor.card.placeholder.number"
+            ></span
+            ><span data-translation-id="card.time.hours">h</span>
+            <span
+              id="minutes"
+              contenteditable="true"
+              placeholder="0"
+              data-translation-placeholder-id="editor.card.placeholder.number"
+            ></span
+            ><span data-translation-id="card.time.minutes">min</span></span
           >
           <span class="rating"
             ><span class="fillstar" style="color: yellow"
@@ -288,89 +342,166 @@
         <div class="bar">
           <div class="progress" style="clip-path: inset(0 100% 0 0)"></div>
           <div class="count">
-            <span contenteditable="true" id="progress" placeholder="0"></span>
-            von <span contenteditable="true" id="total" placeholder="0"></span
+            <span
+              contenteditable="true"
+              id="progress"
+              placeholder="0"
+              data-translation-placeholder-id="editor.card.placeholder.number"
+            ></span>
+            <span data-translation-id="card.achievements.of">von</span>
+            <span
+              contenteditable="true"
+              id="total"
+              placeholder="0"
+              data-translation-placeholder-id="editor.card.placeholder.number"
+            ></span
             ><span id="percentage" style="float: right">0%</span>
           </div>
         </div>
       </div>
       <div id="options">
-        <label for="togglestory">Story:</label>
+        <label for="togglestory" data-translation-id="editor.options.story"
+          >Geschichte:</label
+        >
         <input id="togglestory" data-dest=".story" type="checkbox" checked />
-        <label for="togglepublished">Veröffentlichung:</label>
+        <label for="togglepublished"
+          ><span data-translation-id="card.release">Veröffentlichung</span
+          >:</label
+        >
         <input
           id="togglepublished"
           data-dest="#published"
           type="checkbox"
           checked
         />
-        <label for="togglelastplayed">Zuletzt gespielt:</label>
+        <label for="togglelastplayed"
+          ><span data-translation-id="card.lastPlayed">Zuletzt gespielt</span
+          >:</label
+        >
         <input
           id="togglelastplayed"
           data-dest="#lastplayed"
           type="checkbox"
           checked
         />
-        <label for="togglemultiplayer">Multiplayer Typ:</label>
+        <label for="togglemultiplayer"
+          ><span data-translation-id="card.multiplayer-type"
+            >Multiplayer Typ</span
+          >:</label
+        >
         <input
           id="togglemultiplayer"
           data-dest="#multiplayer"
           type="checkbox"
           checked
         />
-        <label for="toggleseries">Spieleserie:</label>
+        <label for="toggleseries"
+          ><span data-translation-id="card.series">Spieleserie</span>:</label
+        >
         <input id="toggleseries" data-dest="#series" type="checkbox" checked />
-        <label for="toggletime">Spielzeit:</label>
+        <label for="toggletime" data-translation-id="editor.options.playtime"
+          >Spielzeit:</label
+        >
         <input id="toggletime" data-dest=".time" type="checkbox" checked />
-        <label for="toggleachievements">Errungenschaften:</label>
+        <label
+          for="toggleachievements"
+          data-translation-id="editor.options.achievements"
+          >Errungenschaften:</label
+        >
         <input
           id="toggleachievements"
           data-dest=".bar"
           type="checkbox"
           checked
         />
-        <label for="togglerating">Bewertung:</label>
+        <label for="togglerating" data-translation-id="editor.options.rating"
+          >Bewertung:</label
+        >
         <input id="togglerating" data-dest=".rating" type="checkbox" checked />
-        <label for="toggledescription">Beschreibung:</label>
+        <label for="toggledescription"
+          ><span data-translation-id="editor.card.placeholder.description"
+            >Beschreibung</span
+          >:</label
+        >
         <input
           id="toggledescription"
           data-dest="#description"
           type="checkbox"
           checked
         />
-        <label>Spieler:</label>
+        <label data-translation-id="editor.options.players">Spieler:</label>
         <div>
-          <button id="addplayer" type="button">+</button>
-          <button id="removeplayer" type="button">-</button>
+          <button
+            id="addplayer"
+            type="button"
+            data-translation-id="editor.options.players.add"
+          >
+            +
+          </button>
+          <button
+            id="removeplayer"
+            type="button"
+            data-translation-id="editor.options.players.remove"
+          >
+            -
+          </button>
         </div>
-        <label for="icon">Icon:</label>
+        <label for="icon" data-translation-id="editor.options.icon"
+          >Symbol:</label
+        >
         <input id="icon" type="file" accept="image/*" />
-        <label for="image">Cover image:</label>
+        <label for="image" data-translation-id="editor.options.cover"
+          >Titelbild:</label
+        >
         <div>
           <input
             id="image"
             type="url"
             placeholder="https://cdn.cloudflare.steamstatic.com/steam/apps/0000000/header.jpg"
           />
-          <a href="https://steamdb.info/" target="_blank">SteamDB</a><span class="right">Bild-Url oder Steam App ID eingeben</span>
+          <a href="https://steamdb.info/" target="_blank">SteamDB</a
+          ><span class="right" data-translation-id="editor.description.cover"
+            >Bild-Url oder Steam App ID eingeben</span
+          >
         </div>
 
-        <label>Rich Text:</label>
+        <label data-translation-id="editor.options.rich-text">Rich Text:</label>
         <div>
-          <button type="button" onclick="document.execCommand('bold')">
+          <button
+            type="button"
+            onclick="document.execCommand('bold')"
+            data-translation-id="editor.options.rich-text.bold"
+          >
             Fett
           </button>
-          <button type="button" onclick="document.execCommand('italic')">
+          <button
+            type="button"
+            onclick="document.execCommand('italic')"
+            data-translation-id="editor.options.rich-text.italic"
+          >
             Kursiv
           </button>
-          <button type="button" onclick="document.execCommand('underline')">
-            Unterstrichen
+          <button
+            type="button"
+            onclick="document.execCommand('underline')"
+            data-translation-id="editor.options.rich-text.underline"
+          >
+            Unterstreichen
           </button>
-          <span class="right">Text markieren und Fett, Kursiv oder Unterstrichen anklicken</span>
+          <span class="right" data-translation-id="editor.description.rich-text"
+            >Text markieren und Fett, Kursiv oder Unterstrichen anklicken</span
+          >
         </div>
-        <button id="save" type="button" onclick="autosave=false;location.href='index.html';">Speichern</button>
+        <button
+          id="save"
+          type="button"
+          data-translation-id="editor.dialog.save.save"
+          onclick="autosave=false;location.href='index.html';"
+        >
+          Speichern
+        </button>
       </div>
-    </div>
-  </main>
-  <div style="flex: 1"></div>
+    </main>
+    <div style="flex: 1"></div>
+  </body>
 </html>

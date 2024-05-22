@@ -5,6 +5,9 @@ if (params.id) {
   inputData = JSON.parse(localStorage.getItem('data'))[parseInt(params.id)];
 
   document.addEventListener('DOMContentLoaded', () => {
+    document
+      .querySelector('title')
+      .setAttribute('data-translation-id', 'editor.title.editCard');
     if (inputData['icon'])
       for (elem of document.querySelectorAll('.icon')) {
         elem.src = inputData.icon;

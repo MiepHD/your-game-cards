@@ -1,0 +1,52 @@
+{
+  "lang": "EN",
+  "main.title": "Your Game Cards",
+
+  "main.dialog.loadCards.discardCurrentCards": "Discard current cards",
+  "main.dialog.loadCards.addCards": "Add cards to existing ones",
+  "main.dialog.loadCards.cancel": "Cancel",
+
+  "card.release": "Release",
+  "card.lastPlayed": "Last played",
+  "card.multiplayer-type": "Multiplayer type",
+  "card.series": "Game series",
+  "card.hours": "h",
+  "card.minutes": "min",
+  "card.achievements.of": "of",
+
+  "main.export": "Export as backup / JSON",
+  "main.import": "Import from backup / JSON",
+
+  "editor.title.addCard": "Add card | Your Game Cards",
+  "editor.title.editCard": "Edit card | Your Game Cards",
+  "editor.dialog.save.save": "Save",
+  "editor.dialog.save.dontSave": "Leave without saving",
+  "editor.description.general": "To edit description, time and progress click the fields on the card",
+  "editor.description.story": "To edit the story progress (🕮) input a number 0-9 (0 is a X)",
+  "editor.description.players": "To edit minimal players (<span style='color:blue'>𐀪</span>) and rating (★) click on the desired quantity",
+  "editor.description.cover": "Enter image url or Steam App ID",
+  "editor.description.rich-text": "Select text and click bold, italic or underline",
+
+  "editor.navigation.back": "Back",
+
+  "editor.error.aspect-ratio": "Image must have a 1:1 ratio!",
+
+  "editor.card.placeholder.description": "Description",
+  "editor.card.placeholder.number": "0",
+  "editor.card.placeholder.date": "00.00.0000",
+  "editor.card.placeholder.multiplayer-type": "Local, online",
+
+  "editor.options.story": "Story:",
+  "editor.options.playtime": "Playtime:",
+  "editor.options.achievements": "Achievements:",
+  "editor.options.rating": "Rating:",
+  "editor.options.players": "Players:",
+  "editor.options.players.add": "+",
+  "editor.options.players.remove": "-",
+  "editor.options.icon": "Icon:",
+  "editor.options.cover": "Cover image:",
+  "editor.options.rich-text": "Rich text:",
+  "editor.options.rich-text.bold": "Bold",
+  "editor.options.rich-text.italic": "Italic",
+  "editor.options.rich-text.underline": "Underline"
+}

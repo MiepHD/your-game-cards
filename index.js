@@ -6,6 +6,11 @@
 //33% Bronze
 //66% Silber
 //99% Gold
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
 plain = localStorage.getItem('data');
 data = JSON.parse(plain);
 document.addEventListener('DOMContentLoaded', () => {
@@ -69,21 +74,21 @@ document.addEventListener('DOMContentLoaded', () => {
             ${
               card.published
                 ? `<tr>
-            <th>Veröffentlichung</th>
+            <th data-translation-id="card.release">Veröffentlichung</th>
             <th>${card.published}</th>
           </tr>`
                 : ''
             }
             <tr${card.lastplayed ? '' : ' style="display: none"'}>
-              <th>Zuletzt gespielt</th>
+              <th data-translation-id="card.lastPlayed">Zuletzt gespielt</th>
               <th>${card.lastplayed}</th>
             </tr>
             <tr${card.multiplayer ? '' : ' style="display: none"'}>
-              <th>Multiplayer Typ</th>
+              <th data-translation-id="card.multiplayer-type">Multiplayer Typ</th>
               <th>${card.multiplayer}</th>
             </tr>
             <tr${card.series ? '' : ' style="display: none"'}>
-              <th>Spieleserie</th>
+              <th data-translation-id="card.series">Spieleserie</th>
               <th>${card.series}</th>
             </tr>
           </table>
@@ -91,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="height: 1.5em">
             ${
               card.time
-                ? `<span class="time">${card.time['hours']}h ${card.time['minutes']}min</span>`
+                ? `<span class="time">${card.time['hours']}<span data-translation-id="card.time.hours">h</span> ${card.time['minutes']}<span data-translation-id="card.time.minutes">min</span></span>`
                 : ''
             }
             <span class="rating">${'<span class="fillstar" style="color: yellow">★<span class="outlinestar">☆</span></span>'.repeat(
@@ -110,7 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 : 0
             }% 0 0)"></div>
             <div class="count">
-            ${card.achievements ? card.achievements.progress : 0} von ${
+            ${
+              card.achievements ? card.achievements.progress : 0
+            } <span data-translation-id="card.achievements.of">von</span> ${
       card.achievements ? card.achievements.total : 0
     }<span style="float: right">${
       card.achievements

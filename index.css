@@ -127,11 +127,28 @@ p {
 #import::-webkit-file-upload-button {
   visibility: hidden;
 }
-#export {
+#export > img {
   transform: rotate(180deg);
 }
+#export > span,
+.card:has(#import) > span {
+  padding: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: large;
+  text-decoration: none;
+  color: black;
+}
 #import {
-  background-image: url('assets/download.png');
+  position: absolute;
+  left: 0;
+  top: -20%;
+  width: 100%;
+  height: 120%;
   cursor: pointer;
 }
 
@@ -154,4 +171,17 @@ dialog {
   .edit {
     display: none;
   }
+}
+
+#changeLanguage {
+  position: fixed;
+  width: 3ch;
+  padding-left: 1ch;
+  height: 30px;
+  top: 0;
+  left: calc(100% - 4ch);
+  border-radius: 0 0 0 30px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
 }
