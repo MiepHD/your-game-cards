@@ -14,7 +14,11 @@ Example webpage: https://miep-hd.froxot.com/cards/
 
 (Beispielwebseite mit einem Teil meiner Spiele)
 
+# Contributing
 
+Feel free to contribute translations. Get a translation file from `assets/lang/` and translate it. Then send it via Issue, Pull request or E-Mail [your-game-cards](mailto:your-game-cards@froxot.de)
+
+# Generating importable JSON files
 
 Saving structure (Speicherstruktur):
 
