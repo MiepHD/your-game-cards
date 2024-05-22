@@ -1,3 +1,4 @@
+autosave = true;
 function saveInfo() {
   saveData = {};
   //Cover image
@@ -75,13 +76,28 @@ function saveInfo() {
   )
     saveData['icon'] = document.querySelector('.icon').src;
 
+  //Add autosave tag
+  saveData['autosave'] = autosave;
+
   //Save everything to localStorage
   currentdata = JSON.parse(localStorage.getItem('data'));
-  params.id
-    ? (currentdata[parseInt(params.id)] = saveData)
-    : currentdata
-    ? currentdata.push(saveData)
-    : (currentdata = [saveData]);
+  if (params.id) {
+    currentdata[parseInt(params.id)] = saveData;
+  } else {
+    if (currentdata) {
+      if (
+        autosave &&
+        currentdata[params.new] &&
+        currentdata[params.new]['autosave']
+      ) {
+        currentdata[params.new] = saveData;
+      } else {
+        currentdata.push(saveData);
+      }
+    } else {
+      currentdata = [saveData];
+    }
+  }
   localStorage.setItem('data', JSON.stringify(currentdata));
   location.href = 'index.html';
 }

@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('input[type=file]').addEventListener('change', () => {
     document.getElementById('dialogback').style.display = 'block';
   });
+  document.getElementById('new').href += '?new=' + data.length;
   //Add cards
   let i = 0;
   for (card of data) {

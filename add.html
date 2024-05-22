@@ -17,8 +17,8 @@
     <canvas style="display: none"></canvas>
     <div id="dialogback" style="display: none">
       <dialog open>
-        <button><a href="index.html">Speichern</a></button>
-        <button><a href="index.html" onclick="window.removeEventListener('beforeunload', unload)">Verlassen ohne zu speichern</a></button>
+        <button type="button" onclick="autosave=false;location.href='index.html';">Speichern</button>
+        <button type="button"><a href="index.html" onclick="window.removeEventListener('beforeunload', unload)">Verlassen ohne zu speichern</a></button>
       </dialog>
     </div>
     <div style="flex: 1;">
@@ -368,7 +368,7 @@
           </button>
           <span class="right">Text markieren und Fett, Kursiv oder Unterstrichen anklicken</span>
         </div>
-        <a href="index.html"><button id="save" type="button">Speichern</button></a>
+        <button id="save" type="button" onclick="autosave=false;location.href='index.html';">Speichern</button>
       </div>
     </div>
   </main>
