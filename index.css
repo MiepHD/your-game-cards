@@ -167,9 +167,14 @@ dialog {
 @media print {
   a.card,
   .delete,
-  #import,
+  .import,
+  #changeLanguage,
+  #export,
   .edit {
     display: none;
+  }
+  .card {
+    page-break-inside: avoid;
   }
 }
 
