@@ -18,12 +18,15 @@ if (params.id) {
     }
     if (inputData['description'])
       document.getElementById('description').innerHTML = inputData.description;
-    if (inputData['story']) {
+    if (inputData['story'] != undefined) {
       const story = document.getElementById('story');
       story.innerHTML = inputData.story;
       story.dispatchEvent(new Event('input', { bubbles: true }));
     }
-    if (inputData['players'] && inputData['minplayers']) {
+    if (
+      inputData['players'] != undefined &&
+      inputData['minplayers'] != undefined
+    ) {
       document.querySelector('.players').innerHTML =
         `<span>𐀪</span>`.repeat(inputData.players - inputData.minplayers) +
         `<span style="color: blue">𐀪</span>`.repeat(inputData.minplayers);
@@ -43,27 +46,27 @@ if (params.id) {
     if (inputData['series'])
       document.getElementById('vseries').innerHTML = inputData.series;
 
-    if (inputData['rating'])
+    if (inputData['rating'] != undefined)
       document.querySelectorAll('.outlinestar')[inputData.rating - 1].click();
 
-    if (inputData['time']) {
-      if (inputData['time']['hours']) {
+    if (inputData['time'] != undefined) {
+      if (inputData['time']['hours'] != undefined) {
         const hours = document.getElementById('hours');
         hours.innerHTML = inputData['time']['hours'];
         hours.dispatchEvent(new Event('input', { bubbles: true }));
       }
-      if (inputData['time']['minutes']) {
+      if (inputData['time']['minutes'] != undefined) {
         document.getElementById('minutes').innerHTML =
           inputData['time']['minutes'];
       }
     }
-    if (inputData['achievements']) {
-      if (inputData['achievements']['total']) {
+    if (inputData['achievements'] != undefined) {
+      if (inputData['achievements']['total'] != undefined) {
         const total = document.getElementById('total');
         total.innerHTML = inputData['achievements']['total'];
         total.dispatchEvent(new Event('input', { bubbles: true }));
       }
-      if (inputData['achievements']['progress']) {
+      if (inputData['achievements']['progress'] != undefined) {
         const progress = document.getElementById('progress');
         progress.innerHTML = inputData['achievements']['progress'];
         progress.dispatchEvent(new Event('input', { bubbles: true }));

@@ -13,8 +13,9 @@ function saveInfo() {
     saveData['description'] = document.getElementById('description').innerHTML;
 
   //Story
-  if (document.getElementById('togglestory').checked)
-    saveData['story'] = values['story'];
+  document.getElementById('togglestory').checked
+    ? (saveData['story'] = values['story'])
+    : (saveData['story'] = 'hidden');
 
   //Players
   players = document.querySelector('.players').children;
@@ -66,7 +67,11 @@ function saveInfo() {
     saveData['rating'] = values['currentRating'];
 
   //Achievements
-  if (document.getElementById('toggleachievements').checked)
+  if (
+    document.getElementById('toggleachievements').checked &&
+    values['achievements']['progress'] != null &&
+    values['achievements']['total'] != 0
+  )
     saveData['achievements'] = values['achievements'];
 
   //Icon
