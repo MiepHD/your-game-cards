@@ -31,6 +31,7 @@ if (params.id) {
       inputData['players'] != undefined &&
       inputData['minplayers'] != undefined
     ) {
+      values['minplayers'] = inputData['minplayers'];
       document.querySelector('.players').innerHTML =
         `<span>𐀪</span>`.repeat(inputData.players - inputData.minplayers) +
         `<span style="color: blue">𐀪</span>`.repeat(inputData.minplayers);
