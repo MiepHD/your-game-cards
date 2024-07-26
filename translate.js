@@ -13,6 +13,7 @@ switchLanguage = () => {
 };
 
 changeLanguage = (lang) => {
+  localStorage.setItem('lang', lang);
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function () {
     if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -23,7 +24,13 @@ changeLanguage = (lang) => {
   xhr.open('GET', `assets/lang/${lang}.json`, true);
   xhr.send();
 };
-changeLanguage(params.lang ? params.lang : 'en');
+changeLanguage(
+  params.lang
+    ? params.lang
+    : localStorage.getItem('lang')
+    ? localStorage.getItem('lang')
+    : 'en'
+);
 
 translate = () => {
   if (langdata == null || !contentLoaded) return;

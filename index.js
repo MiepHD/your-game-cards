@@ -13,6 +13,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 plain = localStorage.getItem('data');
 data = JSON.parse(plain);
+window.addEventListener('unload', () => {
+  localStorage.setItem('scroll', document.documentElement.scrollTop);
+});
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('export').href =
     'data:text/plain,' + encodeURIComponent(plain);
@@ -157,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
       `<p style="color:red"">${i / 2} space elements are too small!</p>`
     ).appendTo($('body'));
   if (i > 0) console.log(`${i} space elements are too small!`);
+  document.documentElement.scrollTop = localStorage.getItem('scroll');
 });
 
 generateIcons = (url) => {
