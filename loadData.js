@@ -43,7 +43,7 @@ if (params.id) {
     }
     for (field of ['published', 'lastplayed', 'multiplayer', 'series']) {
       if (inputData[field]) {
-        document.getElementById(`v${field}`).innerHTML = inputData.published;
+        document.getElementById(`v${field}`).innerHTML = inputData[field];
       } else {
         document.getElementById(`toggle${field}`).click();
       }
