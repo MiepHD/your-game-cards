@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //Adaptive background for time
   document.getElementById('hours').addEventListener('input', (e) => {
     hours = parseInt(e.currentTarget.innerHTML);
-    background.setTime(hours);
+    background.setTime(hours ? hours : 0);
   });
 
   //Icon
