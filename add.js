@@ -61,10 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //Input story completed
   document.getElementById('story').addEventListener('input', (e) => {
-    input = e.currentTarget.innerHTML;
+    const input = e.currentTarget.innerHTML;
+    const checkbox = document.getElementById('togglestory');
+    if (input == 'hidden') {
+      checkbox.click();
+    }
     count = parseInt(input);
     if (input.includes('y') || input.includes('j')) count = 1;
-    values['story'] = count;
+    values['story'] = count ? count : 0;
     e.currentTarget.innerHTML = count > 0 ? '&#x2713'.repeat(count) : 'X';
   });
 

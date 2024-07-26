@@ -67,12 +67,15 @@ function saveInfo() {
     saveData['rating'] = values['currentRating'];
 
   //Achievements
-  if (
-    document.getElementById('toggleachievements').checked &&
-    values['achievements']['progress'] != null &&
-    values['achievements']['total'] != 0
-  )
-    saveData['achievements'] = values['achievements'];
+  if (document.getElementById('toggleachievements').checked)
+    saveData['achievements'] = {
+      progress: parseInt(values['achievements']['progress'])
+        ? values['achievements']['progress']
+        : 0,
+      total: parseInt(values['achievements']['total'])
+        ? values['achievements']['total']
+        : 0,
+    };
 
   //Icon
   if (

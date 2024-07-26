@@ -16,8 +16,12 @@ if (params.id) {
       document.getElementById('image').value = inputData.image;
       document.querySelector('.cover').src = inputData.image;
     }
-    if (inputData['description'])
+    if (inputData['description']) {
       document.getElementById('description').innerHTML = inputData.description;
+    } else {
+      document.getElementById(`toggledescription`).click();
+    }
+
     if (inputData['story'] != undefined) {
       const story = document.getElementById('story');
       story.innerHTML = inputData.story;
@@ -37,17 +41,19 @@ if (params.id) {
         i--;
       }
     }
-    if (inputData['published'])
-      document.getElementById('vpublished').innerHTML = inputData.published;
-    if (inputData['lastplayed'])
-      document.getElementById('vlastplayed').innerHTML = inputData.lastplayed;
-    if (inputData['multiplayer'])
-      document.getElementById('vmultiplayer').innerHTML = inputData.multiplayer;
-    if (inputData['series'])
-      document.getElementById('vseries').innerHTML = inputData.series;
+    for (field of ['published', 'lastplayed', 'multiplayer', 'series']) {
+      if (inputData[field]) {
+        document.getElementById(`v${field}`).innerHTML = inputData.published;
+      } else {
+        document.getElementById(`toggle${field}`).click();
+      }
+    }
 
-    if (inputData['rating'] != undefined)
+    if (inputData['rating'] != undefined) {
       document.querySelectorAll('.outlinestar')[inputData.rating - 1].click();
+    } else {
+      document.getElementById(`togglerating`).click();
+    }
 
     if (inputData['time'] != undefined) {
       if (inputData['time']['hours'] != undefined) {
@@ -59,6 +65,8 @@ if (params.id) {
         document.getElementById('minutes').innerHTML =
           inputData['time']['minutes'];
       }
+    } else {
+      document.getElementById(`toggletime`).click();
     }
     if (inputData['achievements'] != undefined) {
       if (inputData['achievements']['total'] != undefined) {
@@ -71,6 +79,8 @@ if (params.id) {
         progress.innerHTML = inputData['achievements']['progress'];
         progress.dispatchEvent(new Event('input', { bubbles: true }));
       }
+    } else {
+      document.getElementById(`toggleachievements`).click();
     }
   });
 }

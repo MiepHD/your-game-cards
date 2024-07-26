@@ -54,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
           ${card.description ? `<p>${card.description}</p>` : ''}
           <div class="container">
             <span class="story"${
-              Object.hasOwn(card, 'story') ? '' : ' style="display: none"'
+              Object.hasOwn(card, 'story') && card.story != 'hidden'
+                ? ''
+                : ' style="display: none"'
             }>&#x1F56E; ${
       typeof card.story === 'number'
         ? card.story == 0
