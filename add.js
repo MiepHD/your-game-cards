@@ -10,35 +10,35 @@ values = {
 unload = () => {
   saveInfo();
 };
-window.addEventListener('beforeunload', unload);
+window.addEventListener("beforeunload", unload);
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   //Create background
   background = new BackgroundImage(
-    document.querySelector('.background'),
-    document.querySelector('.foreground')
+    document.querySelector(".background"),
+    document.querySelector(".foreground")
   );
 
   //Editable stars
-  for (star of document.querySelectorAll('.outlinestar')) {
-    star.addEventListener('click', (e) => {
-      rating = parseInt(e.currentTarget.getAttribute('data-value'));
+  for (star of document.querySelectorAll(".outlinestar")) {
+    star.addEventListener("click", (e) => {
+      rating = parseInt(e.currentTarget.getAttribute("data-value"));
       values.currentRating = rating;
-      for (star of document.querySelectorAll('.fillstar')) {
+      for (star of document.querySelectorAll(".fillstar")) {
         rating > 0
-          ? star.style.setProperty('color', 'yellow')
-          : star.style.setProperty('color', 'grey');
+          ? star.style.setProperty("color", "yellow")
+          : star.style.setProperty("color", "grey");
         rating--;
       }
     });
   }
 
   //Adaptive progress bar
-  for (type of ['total', 'progress']) {
-    document.getElementById(type).addEventListener('input', () => {
-      total = parseInt(document.getElementById('total').innerHTML);
-      progress = parseInt(document.getElementById('progress').innerHTML);
-      values['achievements'] = {
+  for (type of ["total", "progress"]) {
+    document.getElementById(type).addEventListener("input", () => {
+      total = parseInt(document.getElementById("total").innerHTML);
+      progress = parseInt(document.getElementById("progress").innerHTML);
+      values["achievements"] = {
         total: total,
         progress: progress,
       };
@@ -51,78 +51,106 @@ document.addEventListener('DOMContentLoaded', () => {
         isNaN(percentage)
       )
         percentage = 0;
-      document.getElementById('percentage').innerHTML = percentage + '%';
+      document.getElementById("percentage").innerHTML = percentage + "%";
       document
-        .querySelector('.progress')
-        .style.setProperty('clip-path', `inset(0 ${100 - percentage}% 0 0)`);
+        .querySelector(".progress")
+        .style.setProperty("clip-path", `inset(0 ${100 - percentage}% 0 0)`);
       background.setAchievements(percentage);
     });
   }
 
   //Input story completed
-  document.getElementById('story').addEventListener('input', (e) => {
+  document.getElementById("story").addEventListener("input", (e) => {
     const input = e.currentTarget.innerHTML;
-    const checkbox = document.getElementById('togglestory');
-    if (input == 'hidden') {
+    const checkbox = document.getElementById("togglestory");
+    if (input == "hidden") {
       checkbox.click();
     }
     count = parseInt(input);
-    if (input.includes('y') || input.includes('j')) count = 1;
-    values['story'] = count ? count : 0;
-    e.currentTarget.innerHTML = count > 0 ? '&#x2713'.repeat(count) : 'X';
+    if (input.includes("y") || input.includes("j")) count = 1;
+    values["story"] = count ? count : 0;
+    e.currentTarget.innerHTML = count > 0 ? "&#x2713".repeat(count) : "X";
   });
 
   //Add players
-  document.getElementById('addplayer').addEventListener('click', () => {
-    players = document.querySelector('.players');
-    player = document.createElement('span');
-    player.setAttribute('data-value', players.children.length + 1);
-    player.innerHTML = '𐀪';
-    player.addEventListener('click', changeMinPlayerCount);
+  document.getElementById("addplayer").addEventListener("click", () => {
+    players = document.querySelector(".players");
+    player = document.createElement("span");
+    player.setAttribute("data-value", players.children.length + 1);
+    player.innerHTML = "𐀪";
+    player.addEventListener("click", changeMinPlayerCount);
     players.insertBefore(player, players.children[0]);
   });
 
   //Remove players
-  document.getElementById('removeplayer').addEventListener('click', () => {
-    people = document.querySelector('.players');
+  document.getElementById("removeplayer").addEventListener("click", () => {
+    people = document.querySelector(".players");
     people.removeChild(people.children[0]);
   });
 
   //Editable min player count
-  for (player of document.querySelectorAll('.players > span')) {
-    player.addEventListener('click', changeMinPlayerCount);
+  for (player of document.querySelectorAll(".players > span")) {
+    player.addEventListener("click", changeMinPlayerCount);
   }
 
   //Show/Hide elements
-  for (checkbox of document.querySelectorAll('input[type=checkbox]')) {
-    checkbox.addEventListener('click', (e) => {
-      dest = document.querySelector(e.currentTarget.getAttribute('data-dest'));
-      dest.style.getPropertyValue('display') == 'none'
-        ? dest.style.setProperty('display', '')
-        : dest.style.setProperty('display', 'none');
+  for (checkbox of document.querySelectorAll("input[type=checkbox]")) {
+    checkbox.addEventListener("click", (e) => {
+      dest = document.querySelector(e.currentTarget.getAttribute("data-dest"));
+      dest.style.getPropertyValue("display") == "none"
+        ? dest.style.setProperty("display", "")
+        : dest.style.setProperty("display", "none");
     });
   }
 
   //Edit cover image
-  document.getElementById('image').addEventListener('input', (e) => {
+  document.getElementById("image").addEventListener("input", (e) => {
     input = e.currentTarget.value;
-    image = document.querySelector('.cover');
-    image.style.display = input == '' ? 'none' : '';
-    image.src = input.includes('http')
+    image = document.querySelector(".cover");
+    image.style.display = input == "" ? "none" : "";
+    image.src = input.includes("http")
       ? input
       : `https://cdn.cloudflare.steamstatic.com/steam/apps/${input}/header.jpg`;
   });
 
-  //Adaptive background for time
-  document.getElementById('hours').addEventListener('input', (e) => {
-    hours = parseInt(e.currentTarget.innerHTML);
+  document.getElementById("hours").addEventListener("input", (e) => {
+    //HoursToMinutes
+    const hoursandminutes = parseFloat(
+      e.currentTarget.innerHTML.replace(",", ".")
+    );
+    if (hoursandminutes > 0) {
+      const hours = Math.floor(hoursandminutes);
+      if (hours != hoursandminutes) {
+        const minutes = (hoursandminutes - hours) * 60;
+        e.currentTarget.innerHTML = hours;
+        const minelem = document.getElementById("minutes");
+        minelem.innerHTML =
+          minutes +
+          (parseInt(minelem.innerHTML) ? parseInt(minelem.innerHTML) : 0);
+      }
+    }
+
+    //Adaptive background for time
     background.setTime(hours ? hours : 0);
   });
 
+  document.getElementById("minutes").addEventListener("input", (e) => {
+    minutes = parseInt(e.currentTarget.innerHTML);
+    if (minutes >= 60) {
+      count = minutes / 60;
+      addhour = Math.floor(count);
+      minutes = minutes % 60;
+      hours = document.getElementById("hours");
+      hours.innerHTML =
+        addhour + (parseInt(hours.innerHTML) ? parseInt(hours.innerHTML) : 0);
+      e.currentTarget.innerHTML = minutes;
+    }
+  });
+
   //Icon
-  document.querySelector('input[type=file]').addEventListener('change', () => {
+  document.querySelector("input[type=file]").addEventListener("change", () => {
     new FileHandler().getImage((url) => {
-      for (icon of document.querySelectorAll('.icon')) {
+      for (icon of document.querySelectorAll(".icon")) {
         icon.src = url;
       }
     });
@@ -131,14 +159,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Sets min player count
 changeMinPlayerCount = (e) => {
-  count = parseInt(e.currentTarget.getAttribute('data-value'));
+  count = parseInt(e.currentTarget.getAttribute("data-value"));
   values.minplayers = count;
-  players = document.querySelectorAll('.players > span');
+  players = document.querySelectorAll(".players > span");
   count = players.length - count;
   for (player of players) {
     count > 0
-      ? player.style.setProperty('color', 'black')
-      : player.style.setProperty('color', 'blue');
+      ? player.style.setProperty("color", "black")
+      : player.style.setProperty("color", "blue");
     count--;
   }
 };
