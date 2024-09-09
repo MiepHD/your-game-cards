@@ -11,19 +11,19 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
 
-plain = localStorage.getItem('data');
+plain = localStorage.getItem("data");
 data = JSON.parse(plain);
-window.addEventListener('unload', () => {
-  localStorage.setItem('scroll', document.documentElement.scrollTop);
+window.addEventListener("unload", () => {
+  localStorage.setItem("scroll", document.documentElement.scrollTop);
 });
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('export').href =
-    'data:text/plain,' + encodeURIComponent(plain);
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("export").href =
+    "data:text/plain," + encodeURIComponent(plain);
 
-  document.querySelector('input[type=file]').addEventListener('change', () => {
-    document.getElementById('dialogback').style.display = 'block';
+  document.querySelector("input[type=file]").addEventListener("change", () => {
+    document.getElementById("dialogback").style.display = "block";
   });
-  document.getElementById('new').href += '?new=' + data.length;
+  document.getElementById("new").href += "?new=" + data.length;
   //Add cards
   let i = 0;
   for (card of data) {
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <a class="edit" href="add.html?id=${i}"><strong>&#9998;</strong></a>
         <div class="delete" data-pos="${i}"><strong>X</strong></div>
         ${generateBackground(
-          card['time']
-            ? card['time']['hours']
-              ? card['time']['hours']
+          card["time"]
+            ? card["time"]["hours"]
+              ? card["time"]["hours"]
               : 0
             : 0,
           card.achievements
@@ -45,31 +45,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 )
             : 0
         )}
-        ${card.icon ? generateIcons(card.icon) : ''}
+        ${card.icon ? generateIcons(card.icon) : ""}
         ${
           card.image
             ? `<img class="cover"
-        src="${card.image}"
+        src="${
+          card.image.includes(".")
+            ? card.image
+            : "https://cdn.cloudflare.steamstatic.com/steam/apps/" +
+              card.image +
+              "/header.jpg"
+        }"
       />`
-            : ''
+            : ""
         }
         <div class="space"></div>
-          ${card.description ? `<p>${card.description}</p>` : ''}
+          ${card.description ? `<p>${card.description}</p>` : ""}
           <div class="container">
             <span class="story"${
-              Object.hasOwn(card, 'story') && card.story != 'hidden'
-                ? ''
+              Object.hasOwn(card, "story") && card.story != "hidden"
+                ? ""
                 : ' style="display: none"'
             }>&#x1F56E; ${
-      typeof card.story === 'number'
+      typeof card.story === "number"
         ? card.story == 0
-          ? 'X'
-          : '&#x2713;'.repeat(card.story)
+          ? "X"
+          : "&#x2713;".repeat(card.story)
         : card.story
-        ? '&#x2713;'
-        : 'X'
+        ? "&#x2713;"
+        : "X"
     }</span>
-            <span class="players">${'𐀪'.repeat(
+            <span class="players">${"𐀪".repeat(
               card.players - card.minplayers
             )}${'<span style="color: blue">𐀪</span>'.repeat(
       card.minplayers
@@ -82,17 +88,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <th data-translation-id="card.release">Veröffentlichung</th>
             <th>${card.published}</th>
           </tr>`
-                : ''
+                : ""
             }
-            <tr${card.lastplayed ? '' : ' style="display: none"'}>
+            <tr${card.lastplayed ? "" : ' style="display: none"'}>
               <th data-translation-id="card.lastPlayed">Zuletzt gespielt</th>
               <th>${card.lastplayed}</th>
             </tr>
-            <tr${card.multiplayer ? '' : ' style="display: none"'}>
+            <tr${card.multiplayer ? "" : ' style="display: none"'}>
               <th data-translation-id="card.multiplayer-type">Multiplayer Typ</th>
               <th>${card.multiplayer}</th>
             </tr>
-            <tr${card.series ? '' : ' style="display: none"'}>
+            <tr${card.series ? "" : ' style="display: none"'}>
               <th data-translation-id="card.series">Spieleserie</th>
               <th>${card.series}</th>
             </tr>
@@ -101,8 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="height: 1.5em">
             ${
               card.time
-                ? `<span class="time">${card.time['hours']}<span data-translation-id="card.time.hours">h</span> ${card.time['minutes']}<span data-translation-id="card.time.minutes">min</span></span>`
-                : ''
+                ? `<span class="time">${card.time["hours"]}<span data-translation-id="card.time.hours">h</span> ${card.time["minutes"]}<span data-translation-id="card.time.minutes">min</span></span>`
+                : ""
             }
             <span class="rating">${'<span class="fillstar" style="color: yellow">★<span class="outlinestar">☆</span></span>'.repeat(
               card.rating
@@ -111,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
     )}</span>
           </div>
           <div class="bar" style="display: ${
-            Object.hasOwn(card, 'achievements') ? 'block' : 'none'
+            Object.hasOwn(card, "achievements") ? "block" : "none"
           }">
             <div class="progress" style="clip-path: inset(0 ${
               card.achievements
@@ -137,34 +143,34 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
         </div>
       `);
-    elem.prependTo($('body'));
+    elem.prependTo($("body"));
     i++;
   }
 
-  for (elem of document.querySelectorAll('.delete')) {
-    elem.addEventListener('click', (e) => {
-      id = parseInt(e.currentTarget.getAttribute('data-pos'));
-      currentData = JSON.parse(localStorage.getItem('data'));
+  for (elem of document.querySelectorAll(".delete")) {
+    elem.addEventListener("click", (e) => {
+      id = parseInt(e.currentTarget.getAttribute("data-pos"));
+      currentData = JSON.parse(localStorage.getItem("data"));
       currentData.splice(id, 1);
-      localStorage.setItem('data', JSON.stringify(currentData));
+      localStorage.setItem("data", JSON.stringify(currentData));
       location.reload();
     });
   }
 
   i = 0;
-  for (elem of document.querySelectorAll('.space')) {
+  for (elem of document.querySelectorAll(".space")) {
     if (elem.clientHeight == 0) i++;
   }
   if (i > 0)
     $(
       `<p style="color:red"">${i / 2} space elements are too small!</p>`
-    ).appendTo($('body'));
+    ).appendTo($("body"));
   if (i > 0) console.log(`${i} space elements are too small!`);
-  document.documentElement.scrollTop = localStorage.getItem('scroll');
+  document.documentElement.scrollTop = localStorage.getItem("scroll");
 });
 
 generateIcons = (url) => {
-  elements = '';
+  elements = "";
   for (let i = 1; i < 45; i++) {
     elements += `<img class="icon pos${i}" src="${url}" />`;
   }
@@ -172,10 +178,10 @@ generateIcons = (url) => {
 };
 
 generateBackground = (hours, percentage) => {
-  backgroundelement = document.createElement('img');
-  backgroundelement.setAttribute('class', 'background');
-  foregroundelement = document.createElement('img');
-  foregroundelement.setAttribute('class', 'foreground');
+  backgroundelement = document.createElement("img");
+  backgroundelement.setAttribute("class", "background");
+  foregroundelement = document.createElement("img");
+  foregroundelement.setAttribute("class", "foreground");
   const background = new BackgroundImage(backgroundelement, foregroundelement);
   background.setTime(hours);
   background.setAchievements(percentage);
@@ -184,17 +190,17 @@ generateBackground = (hours, percentage) => {
 
 loadItems = (add) => {
   new FileHandler().getText((importedData) => {
-    if (typeof JSON.parse(importedData) == 'object')
+    if (typeof JSON.parse(importedData) == "object")
       add
         ? localStorage.setItem(
-            'data',
+            "data",
             JSON.stringify(
               JSON.parse(importedData).concat(
-                JSON.parse(localStorage.getItem('data'))
+                JSON.parse(localStorage.getItem("data"))
               )
             )
           )
-        : localStorage.setItem('data', importedData);
+        : localStorage.setItem("data", importedData);
     location.reload();
   });
 };
