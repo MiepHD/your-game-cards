@@ -4,7 +4,7 @@ Want to show off the games you play? Then Your Game Cards is for you. It allows 
 
 (Du willst zeigen welche Spiele du spielst und das in schöner und übersichtlicher Art und Weise? Dann ist Your Game Cards genau das Richtige. Damit kannst du aus den Informationen über deine Computerspiele ganz einfach ansprechende Karten machen. Diese Karten kannst du dann auch ausdrucken.)
 
-[Web app (Webseitenanwendung)](https://miep-hd.froxot.com/your-game-cards/)
+[Web app (Webseitenanwendung)](https://your-game-cards.froxot.com/)
 
 Example (Beispielkarte):
 
